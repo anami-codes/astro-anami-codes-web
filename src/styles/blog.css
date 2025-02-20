@@ -1,0 +1,22 @@
+/* ------------------------------------ */
+/*               Devlog                  */
+/* ------------------------------------ */
+/* Blog Summary Container */
+.post-summary{
+    width: 28%;
+    margin: 0px 10px 20px 10px;
+    padding-top: 10px !important;
+    padding-bottom: 5px !important;
+  }
+  @media (max-width: 1500px) {
+    .post-summary {
+      width: 45%;
+    }
+  }
+  @media (max-width: 1000px) {
+    .post-summary {
+      width: 95%;
+    }
+  }
+
+

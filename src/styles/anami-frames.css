@@ -1,0 +1,326 @@
+/* ------------------------------------ */
+/*                Page                  */
+/* ------------------------------------ */
+.page {
+  margin: 0 50px;
+}
+@media (max-width: 800px) {
+  .page{
+      margin: 0 20px;
+  }
+}
+
+.page h1 {
+  margin: 10px 0px 5px 0px;
+}
+.page h2{
+  margin: 5px 0px 5px 0px;
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+}
+
+.page > .content {
+  max-width: min(90%, 1200px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (min-width: 600px) {
+  .page > .content {
+    padding: 0 50px;
+  }
+}
+
+/* ------------------------------------ */
+/*               Boxes                  */
+/* ------------------------------------ */
+/*  Pretty Box  */
+.box-margin{
+  margin: min(10px, 5%);
+}
+
+/*  Pretty Box  */
+.pretty-box{
+  min-width: 50px;
+  min-height: 50px;
+
+  border: 2px solid var(--custom-border-color);
+  border-radius: min(15px, 5%);
+  padding: min(15px, 5%) 0;
+
+  background-color: rgba(var(--custom-bg-color), 0.4);
+  font-size: 20px;
+}
+
+.pretty-box h1{
+  text-align: center;
+  font-size: 40px;
+  margin: 0 5% 0 5%;
+}
+.pretty-box h2{
+  text-align: center;
+  font-size: 32px;
+  margin: auto;
+}
+
+@media (max-width: 450px) {
+  .portfolio h1, .portfolio h2 {
+    font-size: 25px;
+  }
+}
+
+.pretty-box p{
+  line-height: 26px;
+}
+@media (max-width: 1500px) {
+  .pretty-box p{
+    font-size: 18px;
+  }
+}
+
+/* ------------------------------------ */
+/*               Card                   */
+/* ------------------------------------ */
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.card-header{
+  border-bottom: 1px solid var(--custom-border-color);
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.card-body{
+  margin: 0px min(15px, 5%);
+  min-height: 100px;
+  padding-bottom: min(30px, 10%);
+}
+.card-footer{
+  border-top: 1px solid var(--custom-border-color);
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.card h3{
+  text-align: left !important;
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  margin: 0px;
+}
+.card p{
+  margin: min(10px, 5%) 0px;
+}
+
+/* ------------------------------------ */
+/*               Banner                 */
+/* ------------------------------------ */
+.banner {
+  height: 100%;
+  background-image: url('/src/assets/images/headers/bg_banner.webp');
+  text-align: center;
+}
+
+.banner img {
+  width: 100%;
+  max-width: 1000px;
+}
+@media(max-width:600px) {
+  .banner img{
+    width: 100%;
+    max-width: 500px;
+  }
+  #LargeBanner { width: 0px; }
+}
+@media(min-width:601px) {
+  #SmallBanner { width: 0px; }
+}
+
+.banner h1{
+  font-family: var(--heading-font-family);
+  font-size: 50px;
+  font-weight: 1000;
+}
+.banner h2{
+  font-family: var(--body-font-family);
+  font-weight: 500;
+}
+
+/* ------------------------------------ */
+/*              NavBar                 */
+/* ------------------------------------ */
+.navbar {
+  padding: min(10px, 5%) min(20px, 10%);
+  border-top: 2px solid var(--section-border-color);
+  border-bottom: 2px solid var(--section-border-color);
+  background-color: var(--section-bg-color);
+
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.navlinks {
+  display: flex;
+  flex-wrap: inherit;
+  flex-direction: row;
+  align-items: center;
+  
+  margin: 10px auto !important;
+  padding: 0px;
+}
+
+.navlinks a{
+  padding: 0 10px;
+  color: var(--body-color-hex);
+  font: var(--font-monospace);
+  text-decoration: none;
+}
+.navlinks a:hover {
+  color: var(--side-color);
+}
+
+.nav-current {
+  color: var(--main-color) !important;
+  pointer-events: none;
+}
+
+/* ------------------------------------ */
+/*           Page Section               */
+/* ------------------------------------ */
+.page-section {
+  margin: 10px;
+}
+
+.page-section-var {
+padding: 10px;
+border-top: 2px solid var(--section-border-color);
+border-bottom: 2px solid var(--section-border-color);
+background-color: var(--section-bg-color);
+}
+
+/* ------------------------------------ */
+/*              Footer                  */
+/* ------------------------------------ */
+footer {
+  display: block;
+  margin-top: auto;
+  padding: 10px 20px 10px 20px;
+  border-top: 1px solid var(--section-border-color);
+  background-color: var(--section-bg-color);
+
+  text-align: center;
+  font-size: 10px;
+  line-height: 10px;
+}
+
+/* ------------------------------------ */
+/*              Buttons                 */
+/* ------------------------------------ */
+/* Base Button */
+.btn {
+  border: 2px solid var(--custom-border-color);
+  background-color: rgba(var(--custom-bg-color), 0.75);
+  border-radius: 15px;
+
+  color: var(--white-hex);
+  text-align: center;
+  font-family: "Sono", monospace;
+  font-size: 18px;
+}
+.btn:hover {
+  border: 2px solid var(--side-color);
+  background-color: rgba(var(--side-color-values), 0.75);
+  color: var(--black) !important;
+}
+
+.btn img {
+  display: block;
+  margin: 10px;
+  opacity: 0.75;
+}
+.btn img:hover{
+  opacity: 1.0;
+}
+
+/* Button Shapes */
+.point-left {
+  border-radius: 50px 15px 15px 50px !important;
+}
+.point-right {
+  border-radius: 15px 50px 50px 15px !important;
+}
+.round {
+  border-radius: 50% !important;
+}
+.btn-img{
+  color: var(--white);
+}
+.btn-img:hover{
+  color: var(--side-color);
+}
+
+/* ------------------------------------ */
+/*               Helpers                */
+/* ------------------------------------ */
+
+.hide-oveflow { overflow: hidden; }
+
+/* --> Width <--- */
+
+.w-1 { width: 10%; }
+.w-2 { width: 20%; }
+.w-3 { width: 30%; }
+.w-4 { width: 40%; }
+.w-5 { width: 50%; }
+.w-6 { width: 60%; }
+.w-7 { width: 70%; }
+.w-8 { width: 80%; }
+.w-9 { width: 90%; }
+.w-full { width: 100%; }
+
+@media (max-width: 950px) {
+  .w-3, .w-6 { width: 100%; }
+}
+
+/* --> Margin <--- */
+.mh-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mv-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.ml-auto{ margin-left: auto; }
+.mr-auto { margin-right: auto; }
+
+/* --> Flex <--- */
+
+.flex-wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-nowrap{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.center-flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-evenly-flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.center{ text-align: center; }

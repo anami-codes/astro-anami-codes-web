@@ -1,0 +1,105 @@
+
+/* --------------------------------------------- */
+/*           Profile + Portafolio                */
+/* --------------------------------------------- */
+
+/* HomePage's Profile picture */
+.pfp-box{
+  width: 35%;
+  margin-right: 15px;
+  float: left;
+}
+.pfp {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media(max-width:600px) {
+  #pfpSmall { display: block; }
+  #pfpLarge { display: none; }
+}
+@media(min-width:600px) {
+  #pfpSmall { display: none; }
+  #pfpLarge { display: block; }
+}
+@media(min-width:950px) {
+  #pfpSmall { display: block; }
+  #pfpLarge { display: none; }
+}
+
+.game-showcase{
+  border-top: 2px solid var(--custom-border-color);
+  border-bottom: 2px solid var(--custom-border-color);
+  border-radius: 0px;
+  background-color: var(--custom-border-color);
+  line-height: 0px;
+}
+
+/* HomePage's Game Cover */
+.game-cover {
+  width: 50%;
+  border: 2px solid var(--custom-border-color);
+  background-color: var(--side-color);
+}
+@media (min-width: 1300px) {
+  .game-cover {
+    width: 33.3%;
+  }
+}
+
+.game-cover img, .game-cover img:hover{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.game-cover img:hover{
+  opacity: 75%;
+}
+
+/* Buttons */
+.profile .btn {
+  height: 50px !important;
+  margin: 5px !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.projects .btn {
+  border-width: 4px;
+  opacity: 0.75;
+  margin: 25px !important;
+}
+.projects .btn:hover {
+  opacity: 1.0;
+}
+
+.profile-arrows > .btn {
+  width: max(46%, 170px);
+}
+@media (max-width: 450px) {
+  .profile-arrows > .btn {
+    width: max(95%, 170px);
+  }
+}
+
+
+/* ------------------------------------ */
+/*               Devlog                   */
+/* ------------------------------------ */
+/* Blog Summary Container */
+.post-summary{
+  width: 28%;
+  margin: 0px 20px 20px 20px;
+  padding-top: 10px !important;
+  padding-bottom: 5px !important;
+}
+@media (max-width: 1200px) {
+  .post-summary {
+    width: 45%;
+  }
+}
+@media (max-width: 775px) {
+  .post-summary {
+    width: 100%;
+  }
+}

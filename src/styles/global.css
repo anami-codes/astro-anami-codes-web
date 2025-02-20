@@ -1,0 +1,220 @@
+:root {
+    /* Main Color */
+    --main-color: #16c1f5;
+    --main-color-values: 22, 193, 245;
+
+    /* Links */
+    /* Normal */
+    --side-color: #f5c762;
+    --side-color-values: 245, 199, 98;
+    /* Light */
+    --link-color: #fff3bb;
+    --link-color-values: 255, 243, 187;
+
+    /* Pink */
+    /* Dark */
+    --dark-pink: #981178;
+    --dark-pink-values: 152, 17, 120;
+    /* Light */
+    --light-pink: #ff74d5;
+    --light-pink-values: 255, 116, 213;
+
+    /* Purple */
+    /* Dark */
+    --dark-purple: #3a1198;
+    --dark-purple-values: 58, 17, 152;
+    /* Light */
+    --light-purple: #8974ff;
+    --light-purple-values: 137, 116, 255;
+
+    /* Blue */
+    /* Dark */
+    --dark-blue: #2574a5;
+    --dark-blue-values: 37, 116, 165;
+    /* Light */
+    --light-blue: #68c5ff;
+    --light-blue-values: 104, 197, 255;
+
+    /* Green */
+    /* Dark */
+    --dark-green: #1f8f64;
+    --dark-green-values: 31, 143, 100;
+    /* Light */
+    --light-green: #84d8b8;
+    --light-green-values: 132, 216, 184;
+
+
+    /* Black */
+    --black: #040404;
+    --black-values: 4, 4, 4;
+    /* White */
+    --white: #ececec;
+    --white-values: 236, 236, 236;
+
+    /* Useful Variables */
+    --custom-border-color: #fff;
+    --custom-bg-color: 104, 197, 255;
+    --heading-font-family: "Nunito", sans-serif;
+    --heading-font-weight: 1000;
+    --body-font-family: "Sono", monospace;
+    --body-font-size: 1rem;
+    --body-font-weight: 400;
+    --body-line-height: 1.5;
+
+
+    --accent-bg-color-hex: #021318;
+    --accent-bg-color-rgb: 2, 19, 24;
+  
+    --section-border-color: #2574a5;
+    --section-bg-color: rgb(104, 197, 255, 0.4);
+  
+    --body-color-hex: #ececec;
+    --body-color-rgb: 236, 236, 236;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/src/assets/fonts/Nunito/Nunito-Regular.woff2') format('woff2'),
+        url('/src/assets/fonts/Nunito/Nunito-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/src/assets/fonts/Nunito/Nunito-Bold.woff2') format('woff2'),
+        url('/src/assets/fonts/Nunito/Nunito-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sono Monospace';
+    src: url('/src/assets/fonts/Sono/SonoMonospace-Bold.woff2') format('woff2'),
+        url('/src/assets/fonts/Sono/SonoMonospace-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sono Monospace';
+    src: url('/src/assets/fonts/Sono/SonoMonospace-Regular.woff2') format('woff2'),
+        url('/src/assets/fonts/Sono/SonoMonospace-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ------------------------------------ */
+/*                Body                  */
+/* ------------------------------------ */
+
+html{
+    overflow-x:hidden
+}
+
+body {
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size);
+    font-weight: var(--body-font-weight);
+    line-height: var(--body-line-height);
+    font-optical-sizing: auto;
+    font-variation-settings: "MONO" 1;
+
+    background-image: url('/src/assets/images/general/bg_moche.webp');
+    background-position: 10px 50px;
+    background-color: var(--body-bg-color-hex);
+    color: var(--body-color-hex);
+    margin: 0;
+
+    min-height: 100vh;
+}
+body ::before, ::after {
+    box-sizing: border-box;
+}
+.body-background {
+    background: rgba(var(--white-values), 0.15);
+  }
+.main-body{
+padding: 5px 0px;
+max-width: 90vw;
+min-width: 75vw;
+width: 50%;
+
+background: var(--black);
+border-left: 4px double rgba(var(--white-values), 0.5);
+border-right: 4px double rgba(var(--white-values), 0.5);
+}
+@media (max-width: 800px) {
+.main-body{
+    width: 100%;
+}
+}
+
+/* ------------------------------------ */
+/*                Text                  */
+/* ------------------------------------ */
+h1 {
+    font-family: var(--heading-font-family);
+    font-weight: var(--heading-font-weight);
+    font-style: normal;
+    font-size: 42px;
+}
+
+h2 {
+    font-family: var(--heading-font-family);
+    font-weight: 1000;
+    font-style: normal;
+}
+
+.txt-s{
+    font-size: 12px !important;
+}
+
+/* ------------------------------------ */
+/*               Links                  */
+/* ------------------------------------ */
+a{
+    color: var(--link-color);
+    text-decoration: none;
+}
+a:hover{
+    color: var(--side-color);
+}
+.disabled {
+    pointer-events: none;
+}
+
+/* ------------------------------------ */
+/*               Lists                  */
+/* ------------------------------------ */
+ul li::marker {
+    content: "🌙 ";
+}
+
+/* ------------------------------------ */
+/*        Customization Block           */
+/* ------------------------------------ */
+.green {
+    --custom-border-color: var(--dark-green);
+    --custom-bg-color: var(--light-green-values);
+}
+.blue {
+    --custom-border-color: var(--dark-blue);
+    --custom-bg-color: var(--light-blue-values);
+}
+.purple {
+    --custom-border-color: var(--dark-purple);
+    --custom-bg-color: var(--light-purple-values);
+}
+.pink {
+    --custom-border-color: var(--dark-pink);
+    --custom-bg-color: var(--light-pink-values);
+}
+.black {
+    --custom-border-color: var(--black);
+    --custom-bg-color: var(--black-values);
+}

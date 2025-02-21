@@ -1,13 +1,15 @@
 ---
 title:  "Devlog 01: Senshi's Pt. 1"
-subtitle: Making a little cooking game with Dungeon Meshi characters!
-banner: Banner
-short_title: Base Post
-date: '2025-02-07'
+subtitle: "Making a little cooking game with Dungeon Meshi characters!"
+banner: banner
+short_title: "Devlog 01: Senshi's Pt. 1"
+date: 2025-02-07
 
 categories: ["blog", "rainbow-cat-studio"]
 
 tags: ["personal", "another tag", "a custom tag", "a really long tag just to see how it looks"]
+
+layout: ../../../layouts/BlogPostLayout.astro
 
 ---
 

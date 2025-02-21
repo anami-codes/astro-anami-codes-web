@@ -1,6 +1,7 @@
 ---
 const pageTitle = "Home";
 const banner = "banner";
+const maxPosts = 3;
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 
@@ -10,8 +11,6 @@ import ProjectBtn from '../components/snippets/projectBtn.astro';
 import DevlogShowcase from '../components/devlogShowcase.astro';
 
 import '../styles/landing.css';
-
-const allPosts = Object.values(import.meta.glob('./blog/posts/*.md', { eager: true }));
 
 ---
 
@@ -82,7 +81,7 @@ const allPosts = Object.values(import.meta.glob('./blog/posts/*.md', { eager: tr
   <div class="page-section">
     <h1 class="center">Devlogs</h1>
     <div class="devlog-margin">
-      <DevlogShowcase startPost=0 maxPosts=6 allPosts={allPosts} />
+      <DevlogShowcase startPost=0 maxPosts={maxPosts} />
     </div>
   </div>
   <div style="display: block; height: 2rem;"></div>

@@ -6,6 +6,8 @@ import Navigation from '../components/navigation.astro';
 import '../styles/global.css';
 import '../styles/anami-frames.css'
 
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
 const {title, banner, navCode} = Astro.props;
 
 ---
@@ -15,7 +17,7 @@ const {title, banner, navCode} = Astro.props;
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="generator" content={Astro.generator} >
-    <title>Anami Codes | {title}</title>
+    <title>{SITE_TITLE} | {title}</title>
   </head>
   <body>
     <Header banner={banner} />

@@ -1,0 +1,15 @@
+---
+const pageTitle = "Blog";
+const banner = "banner";
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DevlogShowcase from '../../components/devlogShowcase.astro';
+
+---
+
+<BaseLayout pageTitle={pageTitle} banner={banner} navCode={pageTitle}>
+  <h1>{pageTitle}</h1>
+  <p>This is where I will post about my journey learning Astro.</p>
+
+  <DevlogShowcase startPost=0 maxPosts=10 />
+</BaseLayout>

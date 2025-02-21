@@ -2,8 +2,7 @@
 title: "The Sapling: Devlog 1"
 subtitle: "About the project and the team."
 banner: Banner
-short_title: "The Sapling: Devlog 1"
-date: '01-01-3000'
+pubDate: '01-01-3000'
 permalink: /blog/2024/03/01/the-sapling-devlog-1/
 
 categories:

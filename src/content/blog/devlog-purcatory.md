@@ -2,8 +2,7 @@
 title:  "Devlog 02 - Purcatory"
 subtitle: A base post for testing purposes.
 banner: Banner
-short_title:  "Devlog 02"
-date: '01-01-3000'
+pubDate: '01-01-3000'
 permalink: /blog/2025/02/07/base-post/
 
 categories:

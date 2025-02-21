@@ -124,7 +124,7 @@ body {
     font-optical-sizing: auto;
     font-variation-settings: "MONO" 1;
 
-    background-image: url('/src/assets/images/general/bg_moche.webp');
+    background-image: url('/images/general/bg_moche.webp');
     background-position: 10px 50px;
     background-color: var(--body-bg-color-hex);
     color: var(--body-color-hex);

@@ -1,0 +1,18 @@
+---
+const {startPost, maxPosts, allPosts} = Astro.props;
+
+import DevlogCard from "./snippets/devlogCard.astro";
+
+---
+<div class="center-flex">
+    {allPosts.slice(startPost, maxPosts).map(
+        (post: any) => 
+            <DevlogCard 
+            shortTitle={post.frontmatter.short_title} 
+            url={post.url} 
+            date={post.frontmatter.date} 
+            excerpt=""
+            tags={post.frontmatter.tags} />
+        )
+    }
+</div>

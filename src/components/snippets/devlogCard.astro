@@ -1,0 +1,26 @@
+---
+const {shortTitle, url, date, excerpt, tags} = Astro.props
+
+---
+
+<div class="pretty-box card-container green" style="aspect-ratio: 5 / 3;">
+    <div class="card">
+        <div class="card-header">
+            <div style="margin: 0px 15px 4px 15px;">
+                <h3><a href={url}>{shortTitle}</a></h3>
+                <div class="txt-s">{date.toString().slice(0,10)}</div>
+            </div>
+        </div>
+        <div class="card-footer hide-oveflow">
+            <p class="txt-s" style="margin: auto 15px auto 15px;">
+                {tags.map( (tag: any) => 
+                        <a href={`/tags/${tag}/`}>{tag} </a>
+                    )
+                }
+            </p>
+        </div>
+        <div class="card-body">
+            {excerpt}
+        </div>
+    </div>
+</div>

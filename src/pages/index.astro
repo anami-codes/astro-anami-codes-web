@@ -1,96 +1,89 @@
 ---
 const pageTitle = "Home";
+const banner = "banner";
 
-import Header from '../components/header.astro';
-import Navigation from '../components/navigation.astro';
-import Social from '../components/socialBtn.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-import '../styles/global.css';
-import '../styles/anami-frames.css'
+import SocialBtn from '../components/snippets/socialBtn.astro';
+import GameBtn from '../components/snippets/gameBtn.astro';
+import ProjectBtn from '../components/snippets/projectBtn.astro';
+import DevlogShowcase from '../components/devlogShowcase.astro';
+
 import '../styles/landing.css';
-import '../styles/flickity.css';
+
+const allPosts = Object.values(import.meta.glob('./blog/posts/*.md', { eager: true }));
+
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/images/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="generator" content={Astro.generator} >
-    <title>Anami Codes | {pageTitle}</title>
-  </head>
-  <body>
-    <Header />
-    <Navigation currentPage="Home" />
-    <div class="page-section center-evenly-flex">
-      <div class="profile w-3">
-        <div class="box-margin">
-          <div class="pretty-box purple">
-            <div style="padding-right: 2%; padding-left: 2%;">
-              <div id="pfpLarge" class="pfp-box">
-                <img src="/src/assets/images/general/pfp.webp" class="pfp">
+<BaseLayout title={pageTitle} banner={banner} navCode={pageTitle}>
+  <div class="page-section center-evenly-flex">
+    <div class="profile w-3">
+      <div class="box-margin">
+        <div class="pretty-box purple">
+          <div style="padding-right: 2%; padding-left: 2%;">
+            <div id="pfpLarge" class="pfp-box">
+              <img src="/images/general/pfp.webp" alt="Host Anami" class="pfp">
+              <p class="txt-s center">(Any pronouns!)</p>
+            </div>
+            <h1>Hey there!</h1>
+            <div>
+              <div id="pfpSmall" class="pfp-box">
+                <img src="/images/general/pfp.webp" class="pfp">
                 <p class="txt-s center">(Any pronouns!)</p>
               </div>
-              <h1>Hey there!</h1>
-              <div>
-                <div id="pfpSmall" class="pfp-box">
-                  <img src="/src/assets/images/general/pfp.webp" class="pfp">
-                  <p class="txt-s center">(Any pronouns!)</p>
-                </div>
-                <div style="padding-bottom: min(10px, 5%);">
-                    <p>I'm Anaís (also known as Anami), a peruvian game developer with a shark hat 🦈</p>
-                    <p>Part programmer, part writer, tiny bit technical artist, I'm currently working as Rainbow Cat Studio's Lead (and Only) Programmer and Writer, as well as FemDevs Perú's vice-president (yay!)</p>
-                </div>
+              <div style="padding-bottom: min(10px, 5%);">
+                  <p>I'm Anaís (also known as Anami), a peruvian game developer with a shark hat 🦈</p>
+                  <p>Part programmer, part writer, tiny bit technical artist, I'm currently working as Rainbow Cat Studio's Lead (and Only) Programmer and Writer, as well as FemDevs Perú's vice-president (yay!)</p>
               </div>
-              <!-- Profile Buttons -->
-              <div class="center-flex profile-arrows" style="padding-bottom: min(15px, 5%);">
-                  <a class="btn point-left" href="/about/">About Me</a>
-                  <a class="btn point-right" href="">Portfolio</a>
-              </div>
-              <!-- Profile SocialMedia -->
-              <div class="center-flex black">
-                <Social platform="github" username="anami-codes" />
-              </div>
-          </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="w-6">
-        <div class="box-margin">
-          <div class="pretty-box pink">
-            <h1 style="margin-bottom: min(15px, 5%);">Some games I made!</h1>
-            <div class="game-showcase center-flex">
-              <a href="https://anami.itch.io/amazonaria" target="_blank" class="game-cover" >
-                <img src="/src/assets/images/portafolio/amazonaria.webp" alt="Amazonaria">
-              </a>
-              <a href="https://anami.itch.io/amazonaria" target="_blank" class="game-cover" >
-                <img src="/src/assets/images/portafolio/amazonaria.webp" alt="Amazonaria">
-              </a>
-              <a href="https://anami.itch.io/amazonaria" target="_blank" class="game-cover" >
-                <img src="/src/assets/images/portafolio/amazonaria.webp" alt="Amazonaria">
-              </a>
-              <a href="https://anami.itch.io/amazonaria" target="_blank" class="game-cover" >
-                <img src="/src/assets/images/portafolio/amazonaria.webp" alt="Amazonaria">
-              </a>
-              <a href="https://anami.itch.io/amazonaria" target="_blank" class="game-cover" >
-                <img src="/src/assets/images/portafolio/amazonaria.webp" alt="Amazonaria">
-              </a>
-              <a href="https://anami.itch.io/amazonaria" target="_blank" class="game-cover" >
-                <img src="/src/assets/images/portafolio/amazonaria.webp" alt="Amazonaria">
-              </a>
             </div>
-            <h2 style="margin-top: min(15px, 5%); margin-left: 2%; margin-right: 2%;"><a href="https://anami.itch.io/">🌙 check out my itch.io 🌙</a></h2>
-          </div>
+            <!-- Profile Buttons -->
+            <div class="center-flex profile-arrows" style="padding-bottom: min(15px, 5%);">
+                <a class="btn point-left" href="/about/">About Me</a>
+                <a class="btn point-right" href="/">Portfolio</a>
+            </div>
+            <!-- Profile SocialMedia -->
+            <div class="center-flex black">
+              <SocialBtn platform="github" username="anami-codes" />
+            </div>
+        </div>
         </div>
       </div>
+    </div>
+    
+    <div class="portfolio w-6">
+      <div class="box-margin">
+        <div class="pretty-box pink">
+          <h1 style="margin-bottom: min(15px, 5%);">Some games I made!</h1>
+          <div class="grid-container cell-smaller">
+            <GameBtn gameName="Amazonaria" imgName="amazonaria" itchName="amazonaria" />
+            <GameBtn gameName="Amazonaria" imgName="amazonaria" itchName="amazonaria" />
+            <GameBtn gameName="Amazonaria" imgName="amazonaria" itchName="amazonaria" />
+            <GameBtn gameName="Amazonaria" imgName="amazonaria" itchName="amazonaria" />
+            <GameBtn gameName="Amazonaria" imgName="amazonaria" itchName="amazonaria" />
+            <GameBtn gameName="Amazonaria" imgName="amazonaria" itchName="amazonaria" />
+          </div>
+          <h2 style="margin-top: min(15px, 5%); margin-left: 2%; margin-right: 2%;"><a href="https://anami.itch.io/">🌙 check out my itch.io 🌙</a></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display: block; height: 2rem;"></div>
+  <div class="page-section-var blue">
+    <h1 class="center">Projects and Initiatives</h1>
+    <div style="margin: 0 2px 10px 2px;">
+        <div class="scroll-container">
+          <ProjectBtn itemName="anami-toolkit" itemLink="/" />
+          <ProjectBtn itemName="femdevs-peru" itemLink="/" />
+          <ProjectBtn itemName="rainbow-cat-studio" itemLink="/" />
+        </div>
     </div>
     <div style="display: block; height: 2rem;"></div>
-    <div class="page-section-var blue">
-      <h1 class="center">Projects and Initiatives</h1>
-      <div style="margin: 0 2px 10px 2px;">
-        
-      </div>
+  </div>
+  <div class="page-section">
+    <h1 class="center">Devlogs</h1>
+    <div class="devlog-margin">
+      <DevlogShowcase startPost=0 maxPosts=6 allPosts={allPosts} />
     </div>
-  </body>
-</html>
+  </div>
+  <div style="display: block; height: 2rem;"></div>
+</BaseLayout>

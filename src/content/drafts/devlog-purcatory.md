@@ -5,11 +5,7 @@ banner: Banner
 pubDate: '01-01-3000'
 permalink: /blog/2025/02/07/base-post/
 
-categories:
-- blog
-tags:
-- personal
-- purcatory
+tags: ["personal", "purcatory"]
   
 ---
 Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the

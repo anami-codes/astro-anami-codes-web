@@ -1,8 +1,11 @@
 ---
 const { tags } = Astro.props;
+const tagList = new Intl.ListFormat('en', { style: "short", type: "unit" }).format(
+	tags.map( (tag: any) => 
+		{return `<a href="/tags/${tag}/">${tag}</a>`}
+	)
+)
+
 ---
 
-{tags.map( (tag: any) => 
-	<a href={`/tags/${tag}/`}>{tag}, </a>
-	)
-}
+<Fragment set:html={tagList}` />.

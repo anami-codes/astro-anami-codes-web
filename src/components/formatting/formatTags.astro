@@ -1,0 +1,8 @@
+---
+const { tags } = Astro.props;
+---
+
+{tags.map( (tag: any) => 
+	<a href={`/tags/${tag}/`}>{tag}, </a>
+	)
+}

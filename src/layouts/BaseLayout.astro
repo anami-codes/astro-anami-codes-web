@@ -1,0 +1,28 @@
+---
+import Header from '../components/header.astro';
+import Footer from '../components/footer.astro';
+import Navigation from '../components/navigation.astro';
+
+import '../styles/global.css';
+import '../styles/anami-frames.css'
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const {title, banner, navCode} = Astro.props;
+
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="generator" content={Astro.generator} >
+    <title>{SITE_TITLE} | {title}</title>
+  </head>
+  <body>
+    <Header banner={banner} />
+    <Navigation currentPage={navCode} />
+        <slot />
+    <Footer />
+  </body>
+</html>

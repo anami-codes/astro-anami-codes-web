@@ -1,8 +1,9 @@
 ---
+const { banner } = Astro.props;
 ---
 <header id="header">
     <div class="banner">
-        <img src="/src/assets/images/headers/Banner_large.webp" alt="Anami Codes: Game development, coding and baking!" id="LargeBanner">
-        <img src="/src/assets/images/headers/Banner_small.webp" alt="Anami Codes: Game development, coding and baking!" id="SmallBanner">
+        <img src={`/images/banners/${banner}_large.webp`} alt="Anami Codes: Game development, coding and baking!" id="LargeBanner">
+        <img src={`/images/banners/${banner}_small.webp`} alt="Anami Codes: Game development, coding and baking!" id="SmallBanner">
     </div>
 </header>

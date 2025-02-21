@@ -1,0 +1,24 @@
+---
+const {title, url, date, excerpt, tags} = Astro.props
+import FormattedDate from '../../components/formatting/formatDate.astro';
+import FormattedTags from '../../components/formatting/formatTags.astro';
+---
+
+<div class="pretty-box card-container green">
+    <div class="card">
+        <div class="card-header">
+            <div style="margin: 0px 15px 4px 15px;">
+                <h3><a href={url}>{title}</a></h3>
+                <div class="txt-s"><FormattedDate date={date} /></div>
+            </div>
+        </div>
+        <div class="card-body">
+            {excerpt}
+        </div>
+        <div class="card-footer hide-oveflow">
+            <p class="txt-s" style="margin: auto 15px auto 15px;">
+                <FormattedTags tags={tags} />
+            </p>
+        </div>
+    </div>
+</div>

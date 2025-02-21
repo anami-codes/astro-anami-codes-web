@@ -1,0 +1,15 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const {title, banner, navCode} = Astro.props;
+---
+
+<BaseLayout title={title} banner={banner} navCode={navCode}>
+  <div class="body-background fix-height">
+      <div class="main-body mh-auto fix-height">
+          <div class="page">
+              <slot />
+          </div>
+      </div>
+  </div>
+</BaseLayout>

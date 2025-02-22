@@ -3,7 +3,7 @@ const pageTitle = "Home";
 const banner = "banner";
 const maxPosts = 3;
 
-import BaseLayout from '../layouts/BaseLayout.astro';
+import SimpleLayout from '../layouts/SimpleLayout.astro';
 
 import SocialBtn from '../components/snippets/socialBtn.astro';
 import GameBtn from '../components/snippets/gameBtn.astro';
@@ -12,9 +12,13 @@ import DevlogShowcase from '../components/devlogShowcase.astro';
 
 import '../styles/landing.css';
 
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
-<BaseLayout title={pageTitle} banner={banner} navCode={pageTitle}>
+<SimpleLayout title={pageTitle} banner={banner} navCode={pageTitle}>
   <div class="page-section center-evenly-flex">
     <div class="profile w-3">
       <div class="box-margin">
@@ -71,9 +75,9 @@ import '../styles/landing.css';
     <h1 class="center">Projects and Initiatives</h1>
     <div style="margin: 0 2px 10px 2px;">
         <div class="scroll-container">
-          <ProjectBtn itemName="anami-toolkit" itemLink="/" />
-          <ProjectBtn itemName="femdevs-peru" itemLink="/" />
-          <ProjectBtn itemName="rainbow-cat-studio" itemLink="/" />
+          <ProjectBtn itemName="anami-toolkit" itemLink="/" target="_self" />
+          <ProjectBtn itemName="femdevs-peru" itemLink="https://www.femdevsperu.org/" target="_blank" />
+          <ProjectBtn itemName="rainbow-cat-studio" itemLink="https://www.rainbowcatstudio.com/" target="_blank" />
         </div>
     </div>
     <div style="display: block; height: 2rem;"></div>
@@ -81,8 +85,8 @@ import '../styles/landing.css';
   <div class="page-section">
     <h1 class="center">Devlogs</h1>
     <div class="devlog-margin">
-      <DevlogShowcase startPost=0 maxPosts={maxPosts} />
+      <DevlogShowcase startPost=0 maxPosts={maxPosts} posts={posts} />
     </div>
   </div>
   <div style="display: block; height: 2rem;"></div>
-</BaseLayout>
+</SimpleLayout>

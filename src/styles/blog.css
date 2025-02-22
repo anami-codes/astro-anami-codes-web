@@ -1,3 +1,49 @@
+:root {
+    --img-width: 40%;
+}
 
+/* ------------------------------------ */
+/*          Images Behaviour            */
+/* ------------------------------------ */
 
+img {
+    width: 100%;
+    height: auto;
+}
 
+.big-img{
+    display: block;
+}
+.small-img{
+    display: none;
+}
+
+@media (min-width: 1100px) {
+    .big-img{
+        display: none;
+    }
+    .small-img{
+        display: block;
+    }
+}
+
+@media (min-width: 1100px) {
+    .left-side-img {
+        width: var(--img-width) !important;
+        float: left;
+        margin: 15px 15px 15px 0;
+    }
+    .right-side-img {
+        width: var(--img-width) !important;
+        float: right;
+        margin: 15px 0 15px 15px;
+    }
+    .center-img {
+        width: var(--img-width) !important;
+        float: center;
+        margin: 15px 15px 15px 15px;
+    }
+    .flex-img {
+        width: var(--img-width) !important;
+    }
+}

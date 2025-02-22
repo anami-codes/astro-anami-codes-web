@@ -1,11 +1,11 @@
 ---
 title:  "Devlog 02 - Purcatory"
 subtitle: A base post for testing purposes.
+description: ""
 banner: Banner
 pubDate: '01-01-3000'
-permalink: /blog/2025/02/07/base-post/
 
-tags: ["personal", "purcatory"]
+tags: ["devlog", "purcatory"]
   
 ---
 Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the

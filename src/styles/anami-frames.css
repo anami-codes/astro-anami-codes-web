@@ -12,6 +12,11 @@
   gap: 2px;
   justify-content: center;
  }
+@media (max-width: 500px) {
+  .grid-min-size{
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 1600px) {
   .cell-smaller{
@@ -60,6 +65,7 @@
 /* ------------------------------------ */
 .page {
   margin: 0 50px;
+  height: 100%;
 }
 @media (max-width: 800px) {
   .page{
@@ -231,7 +237,6 @@
 
 .navlinks a{
   padding: 0 10px;
-  color: var(--body-color-hex);
   font: var(--font-monospace);
   text-decoration: none;
 }
@@ -239,9 +244,11 @@
   color: var(--side-color);
 }
 
+.nav-link{
+  color: var(--body-color-hex);
+}
 .nav-current {
-  color: var(--main-color) !important;
-  pointer-events: none;
+  color: var(--main-color);
 }
 
 /* ------------------------------------ */

@@ -61,6 +61,8 @@
     --body-font-weight: 400;
     --body-line-height: 1.5;
 
+    --fixed-width-max: 90vw;
+    --fixed-width-min: 75vw;
 
     --accent-bg-color-hex: #021318;
     --accent-bg-color-rgb: 2, 19, 24;
@@ -126,7 +128,7 @@ body {
 
     background-image: url('/images/general/bg_moche.webp');
     background-position: 10px 50px;
-    background-color: var(--body-bg-color-hex);
+    background-color: var(--black);
     color: var(--body-color-hex);
     margin: 0;
 
@@ -137,16 +139,20 @@ body ::before, ::after {
 }
 .body-background {
     background: rgba(var(--white-values), 0.15);
-  }
-.main-body{
-padding: 5px 0px;
-max-width: 90vw;
-min-width: 75vw;
-width: 50%;
+}
 
-background: var(--black);
-border-left: 4px double rgba(var(--white-values), 0.5);
-border-right: 4px double rgba(var(--white-values), 0.5);
+.main-body{
+    padding: 5px 0px;
+    min-height: 80vh;
+
+    background: var(--black);
+    border-left: 4px double rgba(var(--white-values), 0.5);
+    border-right: 4px double rgba(var(--white-values), 0.5);
+}
+.fixed-width{
+    max-width: var(--fixed-width-max);
+    min-width: var(--fixed-width-min);
+    width: 50%;
 }
 @media (max-width: 800px) {
 .main-body{

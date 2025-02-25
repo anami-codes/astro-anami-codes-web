@@ -1,5 +1,5 @@
 ---
-const {title, url, date, excerpt, tags} = Astro.props
+const {title, url, date, description, tags} = Astro.props
 import FormattedDate from '../../components/formatting/formatDate.astro';
 import FormattedTags from '../../components/formatting/formatTags.astro';
 ---
@@ -12,11 +12,11 @@ import FormattedTags from '../../components/formatting/formatTags.astro';
                 <div class="txt-s"><FormattedDate date={date} /></div>
             </div>
         </div>
-        <div class="card-body">
-            {excerpt}
+        <div class="card-body hide-oveflow">
+            {description}
         </div>
         <div class="card-footer hide-oveflow">
-            <p class="txt-s" style="margin: auto 15px auto 15px;">
+            <p class="txt-s" style="margin: auto 5px; color: var(--black)">
                 <FormattedTags tags={tags} />
             </p>
         </div>

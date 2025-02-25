@@ -12,19 +12,6 @@ const posts = (await getCollection('blog')).sort(
 const tags = [...new Set(posts.map((post: any) => post.data.tags).flat())];
 ---
 
-<style>
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .tag {
-    margin: 5px;
-    padding: 0 5px;
-  }
-</style>
-
 <SimpleLayout title={title} banner={banner} navCode={title}>
   <div style="display: block; height: 1rem;"></div>
   <div class="fixed-width mh-auto" style="--fixed-width-min:80vw; --fixed-width-min:95vw;">
@@ -35,9 +22,9 @@ const tags = [...new Set(posts.map((post: any) => post.data.tags).flat())];
       </div>
       <div style="grid-column: span 1;">
         <h2 class="center">Tag List</h2>
-          <div class="tags">
+          <div class="tags purple">
             {tags.map((tag) => (
-              <a href={`/tags/${tag}`} class="btn purple tag">🌙{tag}🌙</a>
+              <a href={`/tags/${tag}`} class="btn tag">🌙{tag}🌙</a>
             ))}
           </div>
       </div>

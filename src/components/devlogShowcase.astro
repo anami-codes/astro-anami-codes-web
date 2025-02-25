@@ -11,7 +11,7 @@ import DevlogCard from "./snippets/devlogCard.astro";
             title={post.data.titleShort != null ? post.data.titleShort : post.data.title } 
             url={`/blog/${post.id}/`} 
             date={post.data.pubDate} 
-            excerpt={post.data.description}
+            description={post.data.description}
             tags={post.data.tags} />
         )
     }

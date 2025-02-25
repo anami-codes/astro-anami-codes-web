@@ -59,7 +59,6 @@
   }
 }
 
-
 /* ------------------------------------ */
 /*                Page                  */
 /* ------------------------------------ */
@@ -107,8 +106,8 @@
   min-height: 50px;
 
   border: 2px solid var(--custom-border-color);
-  border-radius: min(15px, 5%);
-  padding: min(15px, 5%) 0;
+  border-radius: 15px;
+  padding: min(5px, 2%) 0;
 
   background-color: rgba(var(--custom-bg-color), 0.4);
   font-size: 20px;
@@ -158,13 +157,10 @@
 .card-body{
   margin: 0px min(15px, 5%);
   min-height: 200px;
-  padding-bottom: min(30px, 10%);
+  padding-bottom: min(10px);
 }
 
 .card-footer{
-  border-top: 1px solid var(--custom-border-color);
-  position: absolute;
-  bottom: 0px;
   width: 100%;
 }
 
@@ -291,8 +287,6 @@ footer {
 
   color: var(--white-hex);
   text-align: center;
-  font-family: "Sono", monospace;
-  font-size: 18px;
 }
 .btn:hover {
   border: 2px solid var(--side-color);
@@ -323,6 +317,20 @@ footer {
 }
 .btn-img:hover{
   color: var(--side-color);
+}
+
+/* ---------- */
+/*    Tags    */
+/* ---------- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tag {
+  margin: 2px;
+  padding: 2px 5px;
 }
 
 /* ------------------------------------ */

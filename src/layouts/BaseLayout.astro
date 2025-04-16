@@ -1,28 +1,46 @@
 ---
-import Header from '../components/header.astro';
-import Footer from '../components/footer.astro';
-import Navigation from '../components/navigation.astro';
+import { ClientRouter } from "astro:transitions";
+import { SEO } from "astro-seo";
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../consts';
+
+import Header from '../components/_header.astro';
+import Footer from '../components/_footer.astro';
+import Navigation from '../components/_navigation.astro';
 
 import '../styles/global.css';
 import '../styles/anami-frames.css'
 
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-
-const {title, banner, navCode} = Astro.props;
+const {title, banner, navCode, url} = Astro.props;
 
 ---
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="generator" content={Astro.generator} >
-    <title>{SITE_TITLE} | {title}</title>
+    <SEO
+      title= `${title}`
+      titleTemplate=`${SITE_TITLE} | %s`
+      description=`${SITE_DESCRIPTION}`
+      canonical= `${SITE_URL}/${url}`
+      openGraph={{
+        basic: {
+          title: "Ghostnami",
+          type: "webp",
+          image: "/images/general/pfp.webp",
+        }
+      }}
+      charset="utf-8"
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.ico" }, { rel: "sitemap", href: `${SITE_URL}/sitemap-index.xml` }],
+        
+      }}
+    />
+    <ClientRouter />
   </head>
   <body>
     <Header banner={banner} />
     <Navigation currentPage={navCode} />
       <slot />
-    <Footer />
+    <Footer />     
   </body>
 </html>

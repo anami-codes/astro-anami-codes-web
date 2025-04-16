@@ -3,10 +3,13 @@ const title = "About";
 const banner = "banner";
 
 import PageLayout from '../layouts/PageLayout.astro';
+import Greeting from '../components/jsx/greeting.jsx';
 ---
-<PageLayout title={title} banner={banner} navCode={title}>
-  <h1>My Astro Site</h1>
+<PageLayout title={title} banner={banner} navCode={title} url="about">
   <h1>About Me</h1>
+  
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+
   <h2>... and my new Astro site!</h2>
 
   <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>

@@ -4,21 +4,22 @@ const banner = "banner";
 const maxPosts = 3;
 
 import SimpleLayout from '../layouts/SimpleLayout.astro';
-
-import SocialBtn from '../components/snippets/socialBtn.astro';
-import GameBtn from '../components/snippets/gameBtn.astro';
-import ProjectBtn from '../components/snippets/projectBtn.astro';
-import DevlogShowcase from '../components/devlogShowcase.astro';
-
 import '../styles/landing.css';
 
-import { getCollection } from 'astro:content';
+import { For } from '@astropub/flow'
+
+import SocialBtn from '../components/btn_social.astro';
+import DevlogShowcase from '../components/blog_postShowcase.astro';
+
+import { getCollection, getEntry } from 'astro:content';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+const games = await getCollection('homepageGames');
+const projects = await getCollection('homepageProjects');
 ---
 
-<SimpleLayout title={pageTitle} banner={banner} navCode={pageTitle}>
+<SimpleLayout title={pageTitle} banner={banner} navCode={pageTitle} url="">
   <div class="page-section center-evenly-flex">
     <div class="profile w-3">
       <div class="box-margin">
@@ -41,11 +42,11 @@ const posts = (await getCollection('blog')).sort(
             </div>
             <!-- Profile Buttons -->
             <div class="center-flex profile-arrows" style="padding-bottom: min(15px, 5%);">
-                <a class="btn point-left" href="/about/">About Me</a>
-                <a class="btn point-right" href="/">Portfolio</a>
+                <a class="btn point-left arrow" href="/about/">About Me</a>
+                <a class="btn point-right arrow" href="/">Portfolio</a>
             </div>
             <!-- Profile SocialMedia -->
-            <div class="center-flex black">
+            <div class="center-flex black" style="margin-bottom: 0.5em;">
               <SocialBtn platform="github" username="anami-codes" />
             </div>
         </div>
@@ -58,12 +59,11 @@ const posts = (await getCollection('blog')).sort(
         <div class="pretty-box pink">
           <h1 style="margin-bottom: min(15px, 5%);">Some games I made!</h1>
           <div class="grid-container cell-smaller">
-            <GameBtn gameName="Amazonaria" imgName="amazonaria" itchName="amazonaria" />
-            <GameBtn gameName="Amazonaria" imgName="amazonaria" itchName="amazonaria" />
-            <GameBtn gameName="Amazonaria" imgName="amazonaria" itchName="amazonaria" />
-            <GameBtn gameName="Amazonaria" imgName="amazonaria" itchName="amazonaria" />
-            <GameBtn gameName="Amazonaria" imgName="amazonaria" itchName="amazonaria" />
-            <GameBtn gameName="Amazonaria" imgName="amazonaria" itchName="amazonaria" />
+            <For of={games}>{game => 
+              <a href={`${game.data.gameLink}`} target="_blank" class="game-btn">
+                  <img src={`/images/portafolio/${game.data.gameCover}.webp`} alt={game.data.id}>
+              </a>
+              }</For>
           </div>
           <h2 style="margin-top: min(15px, 5%); margin-left: 2%; margin-right: 2%;"><a href="https://anami.itch.io/">🌙 check out my itch.io 🌙</a></h2>
         </div>
@@ -75,9 +75,13 @@ const posts = (await getCollection('blog')).sort(
     <h1 class="center">Projects and Initiatives</h1>
     <div style="margin: 0 2px 10px 2px;">
         <div class="scroll-container">
-          <ProjectBtn itemName="anami-toolkit" itemLink="/" target="_self" />
-          <ProjectBtn itemName="femdevs-peru" itemLink="https://www.femdevsperu.org/" target="_blank" />
-          <ProjectBtn itemName="rainbow-cat-studio" itemLink="https://www.rainbowcatstudio.com/" target="_blank" />
+          <For of={projects}>{project => 
+            <div class={project.data.id != "" ? "btn round item" : "btn round item disabled"} style="height: 250px; width: 250px;">
+                <a href={project.data.link} target={project.data.target}>
+                    <img src={project.data.id != "" ? `/images/projects/${project.data.id}/logo.webp` : "/images/projects/default.webp"} alt={project.data.id != "" ? `${project.data.id}` : "TBD"} >
+                </a>
+            </div>
+          }</For>
         </div>
     </div>
     <div style="display: block; height: 2rem;"></div>

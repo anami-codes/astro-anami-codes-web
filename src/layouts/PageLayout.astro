@@ -2,10 +2,10 @@
 import BaseLayout from "./BaseLayout.astro";
 import '../styles/blog.css'
 
-const {title, banner, navCode} = Astro.props;
+const {title, banner, navCode, url} = Astro.props;
 ---
 
-<BaseLayout title={title} banner={banner} navCode={navCode}>
+<BaseLayout title={title} banner={banner} navCode={navCode} url={url}>
   <div class="body-background">
       <div class="main-body fixed-width mh-auto">
           <div class="page">

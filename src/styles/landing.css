@@ -45,19 +45,6 @@
 }
 
 /* Buttons */
-.profile .btn {
-  margin: 5px !important;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.projects .btn {
-  border-width: 4px;
-  opacity: 0.75;
-  margin: 25px !important;
-}
-.projects .btn:hover {
-  opacity: 1.0;
-}
 
 .profile-arrows > .btn {
   width: max(46%, 170px);
@@ -68,8 +55,20 @@
   }
 }
 
+.arrow {
+  margin: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.arrow:hover {
+  margin: 3px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 /* ------------------------------------ */
-/*               Devlog                   */
+/*               Devlog                 */
 /* ------------------------------------ */
 .devlog-margin{
   margin: 0 min(10%, 300px);

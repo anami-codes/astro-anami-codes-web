@@ -1,0 +1,11 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const {title, banner, navCode, url} = Astro.props;
+---
+
+<BaseLayout title={title} banner={banner} navCode={navCode} url={url}>
+    <div style="min-height: 80vh;">
+    <slot />
+    </div>
+</BaseLayout>

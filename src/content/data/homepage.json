@@ -1,0 +1,49 @@
+{"games":[
+    {
+        "id" : "Amazonaria",
+        "gameCover" : "amazonaria", 
+        "gameLink" : "https://anami.itch.io/Amazonaria"
+    },
+    {
+        "id" : "Game 2", 
+        "gameCover" : "amazonaria", 
+        "gameLink" : "https://anami.itch.io/Amazonaria"
+    },
+    {
+        "id" : "Game 3", 
+        "gameCover" : "amazonaria", 
+        "gameLink" : "https://anami.itch.io/Amazonaria"
+    },
+    {
+        "id" : "Game 4",
+        "gameCover" : "amazonaria", 
+        "gameLink" : "https://anami.itch.io/Amazonaria"
+    },
+    {
+        "id" : "Game 5",
+        "gameCover" : "amazonaria", 
+        "gameLink" : "https://anami.itch.io/Amazonaria"
+    },
+    {
+        "id" : "Game 6", 
+        "gameCover" : "amazonaria", 
+        "gameLink" : "https://anami.itch.io/Amazonaria"
+    }
+],
+"projects":[
+    {
+        "id" : "anami-toolkit",
+        "link" : "/", 
+        "target" : "_self"
+    },
+    {
+        "id" : "femdevs-peru",
+        "link" : "https://www.femdevsperu.org/", 
+        "target" : "_blank"
+    },
+    {
+        "id" : "rainbow-cat-studio",
+        "link" : "https://www.rainbowcatstudio.com/", 
+        "target" : "_blank"
+    }
+]}

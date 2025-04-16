@@ -1,22 +1,23 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import PageLayout from './PageLayout.astro';
-import FormattedDate from '../components/formatting/formatDate.astro';
+import FixedDate from '../components/format/date.astro';
+import FixedTags from '../components/format/tagList.astro';
 import '../styles/blog.css'
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, banner, tags } = Astro.props;
+const { title, subtitle, pubDate, banner, url, tags } = Astro.props;
 ---
 
-<PageLayout title={title} banner={banner != null ? banner : "banner"} navCode="Blog">
+<PageLayout title={title} banner={banner != null ? banner : "banner"} navCode="Blog" url={url}>
   <h1>{ title }</h1>
-  <h2>{ description }</h2>
+  <h2>{ subtitle }</h2>
   <p> 
-    <FormattedDate date={pubDate} /> || Tags: {tags}
+    <FixedDate date={pubDate} /> || Tags: <FixedTags tags={tags} />
   </p>
   <hr>
-  <div class="content">   
+  <div class="content blog">   
     <slot />
   </div>
   <hr>

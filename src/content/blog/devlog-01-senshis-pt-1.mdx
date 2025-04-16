@@ -1,0 +1,57 @@
+---
+title:  "Devlog 01: Senshi's Pt. 1"
+titleShort: "Devlog 01: Senshi's Pt. 1"
+subtitle: "Making a little cooking game with Dungeon Meshi characters!"
+description: "At the end of last week I decided to finally start working on this little idea I had of remaking a Maggie Market game. Maggie Market, for those that don't know, is an artist that made a lot of flash games with..."
+pubDate: '2025-02-07'
+banner: banner
+url: blog/devlog-01-senshis-pt-1
+
+tags: ["devlog","short-games"]
+
+---
+
+import ExtLink from '../../components/format/externalLink.astro'
+import { Image } from 'astro:assets';
+import HKCafeGameplay from '../../assets/posts/H.K._Cafe_Gameplay.png'
+import SenshisMockup from '../../assets/posts/070224_Mockup.png'
+import SenshisBlocking from '../../assets/posts/070224_Blocking.png'
+
+<Image src={HKCafeGameplay} alt="H.K. Cafe Gameplay" class="left-side-img small-img" />
+
+At the end of last week I decided to finally start working on this little idea I had of remaking a Maggie Market game.
+
+<ExtLink text="Maggie Market" url="https://www.instagram.com/maggiemarket/" />, for those that don't know, is an artist that made a lot of flash games with a very distinguishable art style that became core childhood memories for me. I remember being too young to know how to type and taking turns playing them with my mom (who had to translate the instructions for me) to see who could "win" the game.
+
+<Image src={HKCafeGameplay} alt="H.K. Cafe Gameplay" class="big-img" />
+
+###### *(I don't know how neither of us noticed the count-down timer on the corner for years, but at least it was fun!)*
+
+Now, most of (if not all) these games can be found at the <ExtLink text="Flash Museum" url="https://flashmuseum.org/browse/publisher/maggiemarket/" />, but back when I thought they were lost, I got the idea of one day recreating my mom's favorite one, <ExtLink text="H.K. Cafe" url="https://flashmuseum.org/h-k-cafe/" />. Of course, between life, my studies, work and everything else, I never got around doing it.
+
+But I've been wanting to practice using Godot lately, so...
+
+<Image src={SenshisMockup} alt="Shenshi's - Mock-up" class="right-side-img small-img" />
+
+## Here is my Maggie Market x Dungeon Meshi crossover!
+
+Since I was already going to make a cooking game to practice, I decided to just pack in more things I like and decided to make it <ExtLink text="Dungeon Meshi" url="https://myanimelist.net/anime/52701/Dungeon_Meshi" /> themed!
+
+###### *(and btw if you haven't seen or read Dungeon Meshi you should go see it, it's soooo good)*
+
+<Image src={SenshisMockup} alt="Shenshi's - Mock-up" class="big-img" />
+
+The idea is to make a timer based, point&click cooking game with a few combinations of food based off the meals shown in Dungeon Meshi, the main characters as patrons and, of course, a special event in which Izutsumi appears and demands food.
+
+I'm taking it slow, so I haven't progressed much, but I did some blocking, some placeholder art...
+
+<div class="center-evenly-flex">
+    <Image src={SenshisBlocking} alt="Shenshi's - Blocking" class="flex-img" />
+    [PICTURE OF CODE]
+
+    [GIF OF DRINKS AND FOOD]
+</div>
+
+And a bit of coding to fill drinks and move the food around.
+
+It's taking me a bit to get used to Godot since I've always used Unity for work, but I really like open source software, so I guess I'll just keep being stubborn 🐣

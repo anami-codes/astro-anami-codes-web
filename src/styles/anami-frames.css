@@ -12,6 +12,11 @@
   gap: 2px;
   justify-content: center;
  }
+@media (max-width: 500px) {
+  .grid-min-size{
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 1600px) {
   .cell-smaller{
@@ -41,25 +46,21 @@
 .card-container{
   margin: 10px;
   width: 450px;
+  aspect-ratio: 2/1.3;
 }
 
-@media (max-width: 1100px) {
-  .card-container{
-    width: 45%;
-  }
-}
 @media (max-width: 500px) {
   .card-container{
     width: 100%;
   }
 }
 
-
 /* ------------------------------------ */
 /*                Page                  */
 /* ------------------------------------ */
 .page {
   margin: 0 50px;
+  height: 100%;
 }
 @media (max-width: 800px) {
   .page{
@@ -101,8 +102,8 @@
   min-height: 50px;
 
   border: 2px solid var(--custom-border-color);
-  border-radius: min(15px, 5%);
-  padding: min(15px, 5%) 0;
+  border-radius: 15px;
+  padding: min(5px, 2%) 0;
 
   background-color: rgba(var(--custom-bg-color), 0.4);
   font-size: 20px;
@@ -151,14 +152,14 @@
 
 .card-body{
   margin: 0px min(15px, 5%);
-  min-height: 200px;
-  padding-bottom: min(30px, 10%);
+  height: 200px;
+  padding-bottom: min(10px);
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-footer{
-  border-top: 1px solid var(--custom-border-color);
-  position: absolute;
-  bottom: 0px;
   width: 100%;
 }
 
@@ -231,7 +232,6 @@
 
 .navlinks a{
   padding: 0 10px;
-  color: var(--body-color-hex);
   font: var(--font-monospace);
   text-decoration: none;
 }
@@ -239,9 +239,11 @@
   color: var(--side-color);
 }
 
+.nav-link{
+  color: var(--body-color-hex);
+}
 .nav-current {
-  color: var(--main-color) !important;
-  pointer-events: none;
+  color: var(--main-color);
 }
 
 /* ------------------------------------ */
@@ -279,23 +281,24 @@ footer {
 /* Base Button */
 .btn {
   border: 2px solid var(--custom-border-color);
-  background-color: rgba(var(--custom-bg-color), 0.75);
+  background-color: rgba(var(--custom-bg-color), 0.65);
   border-radius: 15px;
-
   color: var(--white-hex);
   text-align: center;
-  font-family: "Sono", monospace;
-  font-size: 18px;
+  margin: 2px;
+  border-width: 0px;
 }
+
 .btn:hover {
   border: 2px solid var(--side-color);
   background-color: rgba(var(--side-color-values), 0.75);
   color: var(--black) !important;
+  margin: 0px;
 }
 
 .btn img {
   width: 100%;
-  opacity: 0.75;
+  opacity: 0.65;
 }
 .btn img:hover{
   opacity: 1.0;
@@ -316,6 +319,25 @@ footer {
 }
 .btn-img:hover{
   color: var(--side-color);
+}
+
+/* ---------- */
+/*    Tags    */
+/* ---------- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tag {
+  margin: 4px;
+  padding: 2px 5px;
+  border-width: 0px;
+}
+
+.tag:hover{
+  margin: 2px;
 }
 
 /* ------------------------------------ */

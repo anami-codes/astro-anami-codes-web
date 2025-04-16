@@ -1,19 +1,15 @@
 ---
-title:  "Devlog 02 - Purcatory"
+title:  "Devlog 02: Purcatory"
+titleShort: "Devlog 01: Purcatory"
 subtitle: A base post for testing purposes.
+description: ""
 banner: Banner
 pubDate: '01-01-3000'
-permalink: /blog/2025/02/07/base-post/
 
-categories:
-- blog
-tags:
-- personal
-- purcatory
+tags: ["devlog", "purcatory"]
   
 ---
-Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the
-edible berry of several species of woody vines in the genus Actinidia.
+Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible berry of several species of woody vines in the genus Actinidia.
 
 The most common cultivar group of kiwifruit is oval, about the size of
 a large hen's egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm

@@ -1,12 +1,7 @@
 ---
-const {startPost, maxPosts} = Astro.props;
+const {startPost, maxPosts, posts} = Astro.props;
 
-import DevlogCard from "./snippets/devlogCard.astro";
-
-import { getCollection } from 'astro:content';
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+import DevlogCard from "./blog_postCard.astro";
 
 ---
 <div class="center-flex">
@@ -16,7 +11,7 @@ const posts = (await getCollection('blog')).sort(
             title={post.data.titleShort != null ? post.data.titleShort : post.data.title } 
             url={`/blog/${post.id}/`} 
             date={post.data.pubDate} 
-            excerpt={post.data.description}
+            description={post.data.description}
             tags={post.data.tags} />
         )
     }

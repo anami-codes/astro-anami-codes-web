@@ -1,5 +1,5 @@
-import { glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content';
+import { glob, file } from 'astro/loaders';
+import { defineCollection, reference, z } from 'astro:content';
 
 const blog = defineCollection({
 	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
@@ -10,8 +10,27 @@ const blog = defineCollection({
 		description: z.string().optional(),
 		pubDate: z.coerce.date(),
 		banner: z.string().optional(),
+		url: z.string().optional(),
 		tags: z.string().array(),
 	}),
 });
 
-export const collections = { blog };
+const homepageGames = defineCollection({
+	loader: file("src/content/data/homepage.json", { parser: (text) => JSON.parse(text).games }),
+	schema: z.object({
+		id: z.string(),
+		gameCover: z.string(),
+		gameLink: z.string(),
+	  }),
+});
+
+const homepageProjects = defineCollection({
+	loader: file("src/content/data/homepage.json", { parser: (text) => JSON.parse(text).projects }),
+	schema: z.object({
+		id: z.string(),
+		link: z.string(),
+		target: z.string(),
+	  }),
+});
+
+export const collections = { blog, homepageGames, homepageProjects };

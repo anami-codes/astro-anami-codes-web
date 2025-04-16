@@ -1,0 +1,9 @@
+---
+const { tags } = Astro.props;
+const tagList = tags.map( (tag: any) => 
+		{return `<a href="/tags/${tag}" class="btn tag">🌙${tag}🌙</a>`}
+	)
+
+---
+
+<Fragment set:html={tagList}` />

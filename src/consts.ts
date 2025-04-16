@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = 'Anami Codes';
 export const SITE_DESCRIPTION = 'Game development, coding and baking!';
+export const SITE_URL = 'https://anami-codes.net'

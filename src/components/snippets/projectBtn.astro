@@ -1,9 +1,0 @@
----
-const {itemName, itemLink} = Astro.props;
----
-
-<div class={itemName != "" ? "btn round item" : "btn round item disabled"} style="height: 250px; width: 250px;">
-    <a href={itemLink} target="_blank">
-        <img src={itemName != "" ? `/images/projects/${itemName}/logo.webp` : "/images/projects/default.webp"} alt={itemName != "" ? `${itemName}` : "TBD"} >
-    </a>
-</div>

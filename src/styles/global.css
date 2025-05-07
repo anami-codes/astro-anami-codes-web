@@ -1,58 +1,6 @@
 :root {
-    /* Main Color */
-    --main-color: #16c1f5;
-    --main-color-values: 22, 193, 245;
-
-    /* Links */
-    /* Normal */
-    --side-color: #f5c762;
-    --side-color-values: 245, 199, 98;
-    /* Light */
-    --link-color: #fff3bb;
-    --link-color-values: 255, 243, 187;
-
-    /* Pink */
-    /* Dark */
-    --dark-pink: #981178;
-    --dark-pink-values: 152, 17, 120;
-    /* Light */
-    --light-pink: #ff74d5;
-    --light-pink-values: 255, 116, 213;
-
-    /* Purple */
-    /* Dark */
-    --dark-purple: #3a1198;
-    --dark-purple-values: 58, 17, 152;
-    /* Light */
-    --light-purple: #8974ff;
-    --light-purple-values: 137, 116, 255;
-
-    /* Blue */
-    /* Dark */
-    --dark-blue: #2574a5;
-    --dark-blue-values: 37, 116, 165;
-    /* Light */
-    --light-blue: #68c5ff;
-    --light-blue-values: 104, 197, 255;
-
-    /* Green */
-    /* Dark */
-    --dark-green: #1f8f64;
-    --dark-green-values: 31, 143, 100;
-    /* Light */
-    --light-green: #84d8b8;
-    --light-green-values: 132, 216, 184;
-
-
-    /* Black */
-    --black: #040404;
-    --black-values: 4, 4, 4;
-    /* White */
-    --white: #ececec;
-    --white-values: 236, 236, 236;
-
+    
     /* Useful Variables */
-    --custom-border-color: #fff;
     --custom-bg-color: 104, 197, 255;
     --heading-font-family: "Nunito", sans-serif;
     --heading-font-weight: 1000;
@@ -64,14 +12,105 @@
     --fixed-width-max: 90vw;
     --fixed-width-min: 75vw;
 
-    --accent-bg-color-hex: #021318;
-    --accent-bg-color-rgb: 2, 19, 24;
-  
+    --bg-img: url('/images/general/backgrounds/Moche_Transparent.webp');
+    --navbar-bg-img-1:url('/images/general/backgrounds/FresnoMar_Frame1.webp');
+    --navbar-bg-img-2:url('/images/general/backgrounds/FresnoMar_Frame2.webp');
+    --navbar-bg-img-3:url('/images/general/backgrounds/FresnoMar_Frame3.webp');
+
+
+}
+
+html {
+    /* Main Color */
+    --main-color: #16c1f5;
+    --main-color-values: 22, 193, 245;
+
+    /* Buttons */
+    --button-border-hover-hex: #f5c762;
+    --button-hover-fill-hex: #ae8d47;
+    /* Links */
+    --link-hex: #fff3bb;
+    --link-hover-hex: #f5c762;
+
+    /* Pink */
+    --border-pink: 152, 17, 120;
+    --fill-pink: 255, 116, 213;
+    --light-pink: rgb(228, 196, 220);
+    --dark-pink: rgb(49, 11, 40);
+    
+    /* Purple */
+    --border-purple: 58, 17, 152;
+    --fill-purple: 137, 116, 255;
+    --light-purple: rgb(216, 206, 241);
+    --dark-purple: rgb(18, 8, 43);
+
+    /* Blue */
+    --border-blue: 37, 116, 165;
+    --fill-blue: 104, 197, 255;
+
+    /* Green */
+    --border-green: 31, 143, 100;
+    --fill-green: 132, 216, 184;
+    --light-green: rgb(180, 227, 209);
+    --dark-green: rgb(25, 52, 42);
+
+    /* Useful Variables */
+    --box-opacity: 0.4;
+    --bg-color-hex: #0c0c0c;
+    --bg-color-rgb: 12, 12, 12;
     --section-border-color: #2574a5;
     --section-bg-color: rgb(104, 197, 255, 0.4);
-  
-    --body-color-hex: #ececec;
-    --body-color-rgb: 236, 236, 236;
+    --navbar-bg-color: #345970;
+    --body-color-hex: #f9f9f9;
+    --body-color-rgb: 249, 249, 249;    
+}
+
+html.light {
+  /* Main Color */
+  --main-color: #086885;
+  --main-color-values: 8, 104, 133;
+
+  /* Links */
+  /* Normal */
+  --side-color: #f5c762;
+  --side-color-values: 245, 199, 98;
+  /* fill */
+  --link-color: #fff3bb;
+  --link-color-values: 255, 243, 187;
+
+  /* Pink */
+  --border-pink: #981178;
+  --border-pink-values: 255, 116, 213;
+  --fill-pink: #981178;
+  --fill-pink-values: 152, 17, 120;
+
+  /* Purple */
+  --border-purple: #8974ff;
+  --border-purple-values: 137, 116, 255;
+  --fill-purple: #a396ec;
+  --fill-purple-values: 163, 150, 236;
+
+  /* Blue */
+  --border-blue: #68c5ff;
+  --border-blue-values: 104, 197, 255;
+  --fill-blue: #2574a5;
+  --fill-blue-values: 37, 116, 165;
+
+  /* Green */
+  --border-green: #1f8f64;
+  --border-green-values: 31, 143, 100;
+  --fill-green: #84d8b8;
+  --fill-green-values: 132, 216, 184;
+
+  /* Useful Variables */
+  --custom-border-color: #fff;
+  --box-opacity: 0.75;
+  --bg-color-hex: #e3edf0;
+  --bg-color-rgb: 227, 237, 240;
+  --section-border-color: #68c5ff;
+  --section-bg-color: rgba(104, 197, 255, 0.75);
+  --body-color-hex: #0c0c0c;
+  --body-color-rgb: 236, 236, 236;
 }
 
 @font-face {
@@ -126,9 +165,8 @@ body {
     font-optical-sizing: auto;
     font-variation-settings: "MONO" 1;
 
-    background-image: url('/images/general/bg_moche.webp');
-    background-position: 10px 50px;
-    background-color: var(--black);
+    background-image: var(--bg-img);
+    background-color: var(--bg-color-hex);
     color: var(--body-color-hex);
     margin: 0;
 
@@ -138,16 +176,19 @@ body ::before, ::after {
     box-sizing: border-box;
 }
 .body-background {
-    background: rgba(var(--white-values), 0.15);
+    background: rgba(var(--body-color-rgb), 0.15);
 }
 
 .main-body{
     padding: 5px 0px;
     min-height: 80vh;
 
-    background: var(--black);
-    border-left: 4px double rgba(var(--white-values), 0.5);
-    border-right: 4px double rgba(var(--white-values), 0.5);
+    background: var(--bg-color-hex);
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-image-source: url('/images/general/pixel_art_border.svg');
+    border-image-repeat: round;
+    border-image-slice: 5.5%;
 }
 .fixed-width{
     max-width: var(--fixed-width-max);
@@ -184,11 +225,11 @@ h2 {
 /*               Links                  */
 /* ------------------------------------ */
 a{
-    color: var(--link-color);
+    color: var(--link-hex);
     text-decoration: none;
 }
 a:hover{
-    color: var(--side-color);
+    color: var(--link-hover-hex);
 }
 .disabled {
     pointer-events: none;
@@ -205,20 +246,28 @@ ul li::marker {
 /*        Customization Block           */
 /* ------------------------------------ */
 .green {
-    --custom-border-color: var(--dark-green);
-    --custom-bg-color: var(--light-green-values);
+    --custom-border-color: var(--border-green);
+    --custom-bg-color: var(--fill-green);
+    --custom-light-color: var(--light-green);
+    --custom-dark-color: var(--dark-green);
 }
 .blue {
-    --custom-border-color: var(--dark-blue);
-    --custom-bg-color: var(--light-blue-values);
+    --custom-border-color: var(--border-blue);
+    --custom-bg-color: var(--fill-blue);
+    --custom-light-color: var(--light-blue);
+    --custom-dark-color: var(--dark-blue);
 }
 .purple {
-    --custom-border-color: var(--dark-purple);
-    --custom-bg-color: var(--light-purple-values);
+    --custom-border-color: var(--border-purple);
+    --custom-bg-color: var(--fill-purple);
+    --custom-light-color: var(--light-purple);
+    --custom-dark-color: var(--dark-purple);
 }
 .pink {
-    --custom-border-color: var(--dark-pink);
-    --custom-bg-color: var(--light-pink-values);
+    --custom-border-color: var(--border-pink);
+    --custom-bg-color: var(--fill-pink);
+    --custom-light-color: var(--light-pink);
+    --custom-dark-color: var(--dark-pink);
 }
 .black {
     --custom-border-color: var(--black);

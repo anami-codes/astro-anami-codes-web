@@ -108,6 +108,13 @@
   background-color: rgba(var(--custom-bg-color), var(--box-opacity));
   font-size: 20px;
 }
+.pretty-box .btn {
+  color: var(--body-color-hex);
+}
+.pretty-box .btn:hover {
+  color: var(--bg-color-hex) !important;
+}
+
 .pretty-box a{
   color: var(--custom-light-color);
 }

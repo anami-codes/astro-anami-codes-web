@@ -71,15 +71,17 @@ const projects = await getCollection('homepageProjects');
     </div>
   </div>
   <div style="display: block; height: 2rem;"></div>
-  <div class="page-section-var blue">
+  <div class="page-section-var blue" style="padding-left: 0px; padding-right: 0px;">
     <h1 class="center">Projects and Initiatives</h1>
-    <div style="margin: 0 2px 10px 2px;">
-        <div class="scroll-container">
+    <div style="margin-bottom: 10px;">
+        <div class="home-carousel center-flex" data-flickity='{ "watchCSS": true, "wrapAround": true, "prevNextButtons": false, "pageDots": false, "autoPlay": 1500 }'>
           <For of={projects}>{project => 
-            <div class={project.data.id != "" ? "btn round item" : "btn round item disabled"} style="height: 250px; width: 250px;">
+            <div class="home-carousel-cell">
+              <div class={project.data.show ? "btn round item" : "btn round item disabled"} style="height: 250px; width: 250px;">
                 <a href={project.data.link} target={project.data.target}>
-                    <img src={project.data.id != "" ? `/images/projects/${project.data.id}/logo.webp` : "/images/projects/default.webp"} alt={project.data.id != "" ? `${project.data.id}` : "TBD"} >
+                    <img src={project.data.show ? `/images/projects/${project.data.id}/logo.webp` : "/images/projects/default.webp"} alt={project.data.show ? `${project.data.id}` : "TBD"} >
                 </a>
+              </div>
             </div>
           }</For>
         </div>

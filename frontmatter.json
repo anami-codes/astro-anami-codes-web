@@ -3,13 +3,32 @@
   "frontMatter.framework.id": "astro",
   "frontMatter.preview.host": "http://localhost:4321",
   "frontMatter.content.publicFolder": "public",
+  "frontMatter.taxonomy.slugPrefix": "/",
+  "frontMatter.taxonomy.slugSuffix": "/",
+  "frontMatter.taxonomy.alignFilename": true,
+  "frontMatter.extensibility.scripts": [
+    "[[workspace]]/.frontmatter/ui/external.js"
+  ],
   "frontMatter.content.pageFolders": [
     {
       "title": "blog",
-      "path": "[[workspace]]/src/content/blog"
+      "path": "[[workspace]]/src/content/blog",
+      "contentTypes": [
+        "blog"
+      ]
     }
   ],
-  "frontMatter.content.supportedFileTypes": [ "md", "markdown", "mdx", "mdoc" ],
+  "frontMatter.content.supportedFileTypes": [
+    "md",
+    "markdown",
+    "mdx",
+    "mdoc"
+  ],
+  "frontMatter.content.draftField": {
+    "name": "published",
+    "type": "choice",
+    "choices": ["draft", "in progress", "published"]
+  },
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
@@ -17,6 +36,27 @@
       "previewPath": "blog",
       "filePrefix": null,
       "clearEmpty": true,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "blog",
+      "pageBundle": false,
+      "previewPath": "blog",
+      "filePrefix": null,
+      "slugTemplate": "{{year}}/{{month}}/{{seoTitle}}",
+      "clearEmpty": true,
+      "template": "[[workspace]]/.frontmatter/templates/blogPost.md",
       "fields": [
         {
           "title": "Title",
@@ -35,6 +75,12 @@
           "type": "string"
         },
         {
+          "title": "Is published?",
+          "name": "published",
+          "type": "draft",
+          "default": false
+        },
+        {
           "title": "Publishing date",
           "name": "pubDate",
           "type": "datetime",
@@ -48,16 +94,17 @@
           "isPreviewImage": true
         },
         {
-          "title": "url",
-          "name": "url",
-          "type": "string"
-        },
-        {
-          "title": "tags",
+          "title": "Tags",
           "name": "tags",
           "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.dashboard.openOnStart": true
 }

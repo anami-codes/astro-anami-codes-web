@@ -3,13 +3,14 @@ const {startPost, maxPosts, posts} = Astro.props;
 
 import DevlogCard from "./blog_postCard.astro";
 
+const publishedPosts = posts.filter((post : any) => post.data.published.includes("published")) 
 ---
 <div class="center-flex">
-    {posts.slice(startPost, maxPosts).map(
+    {publishedPosts.slice(startPost, maxPosts).map(
         (post: any) => 
             <DevlogCard 
-            title={post.data.titleShort != null ? post.data.titleShort : post.data.title } 
-            url={`/blog/${post.id}/`} 
+            title={post.data.title} 
+            slug={`/blog/${post.slug}/`} 
             date={post.data.pubDate} 
             description={post.data.description}
             tags={post.data.tags} />

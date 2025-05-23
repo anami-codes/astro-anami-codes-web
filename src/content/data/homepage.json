@@ -34,16 +34,19 @@
     {
         "id" : "anami-toolkit",
         "link" : "/", 
-        "target" : "_self"
+        "target" : "_self",
+        "show": true
     },
     {
         "id" : "femdevs-peru",
         "link" : "https://www.femdevsperu.org/", 
-        "target" : "_blank"
+        "target" : "_blank",
+        "show": true
     },
     {
         "id" : "rainbow-cat-studio",
         "link" : "https://www.rainbowcatstudio.com/", 
-        "target" : "_blank"
+        "target" : "_blank",
+        "show": true
     }
 ]}

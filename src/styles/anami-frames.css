@@ -91,7 +91,7 @@
 /* ------------------------------------ */
 /*               Boxes                  */
 /* ------------------------------------ */
-/*  Pretty Box  */
+/*  General  */
 .box-margin{
   margin: min(10px, 5%);
 }
@@ -101,14 +101,26 @@
   min-width: 50px;
   min-height: 50px;
 
-  border: 2px solid var(--custom-border-color);
+  border: 2px solid rgb(var(--custom-border-color));
   border-radius: 15px;
   padding: min(5px, 2%) 0;
 
-  background-color: rgba(var(--custom-bg-color), 0.4);
+  background-color: rgba(var(--custom-bg-color), var(--box-opacity));
   font-size: 20px;
 }
+.pretty-box .btn {
+  color: var(--body-color-hex);
+}
+.pretty-box .btn:hover {
+  color: var(--bg-color-hex) !important;
+}
 
+.pretty-box a{
+  color: var(--custom-light-color);
+}
+.pretty-box a:hover{
+  color: var(--link-hover-hex);
+}
 .pretty-box h1{
   text-align: center;
   font-size: 40px;
@@ -119,13 +131,6 @@
   font-size: 32px;
   margin: auto;
 }
-
-@media (max-width: 450px) {
-  .portfolio h1, .portfolio h2 {
-    font-size: 25px;
-  }
-}
-
 .pretty-box p{
   line-height: 26px;
 }
@@ -135,6 +140,37 @@
   }
 }
 
+/*  Cristal Bottle  */
+.glass-bottle-outside {
+  min-width: 50px;
+  min-height: 50px;
+
+  border: 2px solid var(--custom-light-color);
+  background-color: rgba(var(--custom-border-color), 0.35);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.glass-bottle-inside {
+  width: 100%;
+  height: 100%;
+
+  border: 2px solid rgba(var(--custom-border-color), 0.5);
+  background-color: rgba(var(--custom-bg-color), 0.25);
+  border-radius: 10px;
+}
+
+.glass-bottle-inside a{
+  color: var(--custom-light-color);
+}
+.glass-bottle-inside a:hover{
+  color: var(--link-hover-hex);
+}
+
+.glass-bottle-inside .tag{
+  color: var(--custom-dark-color);
+}
+
 /* ------------------------------------ */
 /*               Card                   */
 /* ------------------------------------ */
@@ -142,6 +178,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  padding: min(10px, 2%) min(10px, 5%);
 }
 
 .card-header{
@@ -151,9 +188,8 @@
 }
 
 .card-body{
-  margin: 0px min(15px, 5%);
-  height: 200px;
-  padding-bottom: min(10px);
+  height: 180px;
+  padding-bottom: min(5px);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -214,10 +250,75 @@
   padding: min(10px, 5%) min(20px, 10%);
   border-top: 2px solid var(--section-border-color);
   border-bottom: 2px solid var(--section-border-color);
-  background-color: var(--section-bg-color);
+  background-color: var(--navbar-bg-color);
+
+  background-image: var(--navbar-bg-img-1);
+  background-repeat: repeat-x;
 
   display: flex;
   flex-wrap: nowrap;
+}
+
+/* Nabvar Animation */
+@-webkit-keyframes navbar-bg-anim {
+  0% {background-image: var(--navbar-bg-img-1);}
+  12% {background-image: var(--navbar-bg-img-3);}
+  24% {background-image: var(--navbar-bg-img-2);}
+  36% {background-image: var(--navbar-bg-img-3);}
+  48% {background-image: var(--navbar-bg-img-1);}
+  60% {background-image: var(--navbar-bg-img-3);}
+  72% {background-image: var(--navbar-bg-img-2);}
+  84% {background-image: var(--navbar-bg-img-3);}
+  /*100% {background-position-x: 60px;}*/
+}
+@-moz-keyframes navbar-bg-anim {
+  0% {background-image: var(--navbar-bg-img-1);}
+  12% {background-image: var(--navbar-bg-img-3);}
+  24% {background-image: var(--navbar-bg-img-2);}
+  36% {background-image: var(--navbar-bg-img-3);}
+  48% {background-image: var(--navbar-bg-img-1);}
+  60% {background-image: var(--navbar-bg-img-3);}
+  72% {background-image: var(--navbar-bg-img-2);}
+  84% {background-image: var(--navbar-bg-img-3);}
+  /*100% {background-position-x: 60px;}*/
+}
+@-o-keyframes navbar-bg-anim {
+  0% {background-image: var(--navbar-bg-img-1);}
+  12% {background-image: var(--navbar-bg-img-3);}
+  24% {background-image: var(--navbar-bg-img-2);}
+  36% {background-image: var(--navbar-bg-img-3);}
+  48% {background-image: var(--navbar-bg-img-1);}
+  60% {background-image: var(--navbar-bg-img-3);}
+  72% {background-image: var(--navbar-bg-img-2);}
+  84% {background-image: var(--navbar-bg-img-3);}
+  /*100% {background-position-x: 60px;}*/
+}
+@keyframes navbar-bg-anim{
+  0% {background-image: var(--navbar-bg-img-1);}
+  12% {background-image: var(--navbar-bg-img-3);}
+  24% {background-image: var(--navbar-bg-img-2);}
+  36% {background-image: var(--navbar-bg-img-3);}
+  48% {background-image: var(--navbar-bg-img-1);}
+  60% {background-image: var(--navbar-bg-img-3);}
+  72% {background-image: var(--navbar-bg-img-2);}
+  84% {background-image: var(--navbar-bg-img-3);}
+  /*100% {background-position-x: 60px;}*/
+}
+
+html.animated {
+  .navbar
+  {
+    animation: navbar-bg-anim 3s infinite;
+    -webkit-animation: navbar-bg-anim 3s infinite;
+    -moz-animation: navbar-bg-anim 3s infinite;
+    -o-animation: navbar-bg-anim 3s infinite;
+
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  
 }
 
 .navlinks {
@@ -236,7 +337,7 @@
   text-decoration: none;
 }
 .navlinks a:hover {
-  color: var(--side-color);
+  color: var(--link-hover-hex);
 }
 
 .nav-link{
@@ -280,24 +381,23 @@ footer {
 /* ------------------------------------ */
 /* Base Button */
 .btn {
-  border: 2px solid var(--custom-border-color);
   background-color: rgba(var(--custom-bg-color), 0.65);
   border-radius: 15px;
-  color: var(--white-hex);
+  color: var(--body-color-hex);
   text-align: center;
   margin: 2px;
   border-width: 0px;
 }
 
 .btn:hover {
-  border: 2px solid var(--side-color);
-  background-color: rgba(var(--side-color-values), 0.75);
-  color: var(--black) !important;
-  margin: 0px;
+  outline: 2px solid var(--button-border-hover-hex);
+  background-color: var(--button-hover-fill-hex);
+  color: var(--body-color-hex) !important;
 }
 
 .btn img {
-  width: 100%;
+  width: 95%;
+  margin: 2.5%;
   opacity: 0.65;
 }
 .btn img:hover{
@@ -315,10 +415,10 @@ footer {
   border-radius: 50% !important;
 }
 .btn-img{
-  color: var(--white);
+  color: var(--body-color-hex);
 }
 .btn-img:hover{
-  color: var(--side-color);
+  color: var(--link-hover-hex);
 }
 
 /* ---------- */
@@ -334,10 +434,6 @@ footer {
   margin: 4px;
   padding: 2px 5px;
   border-width: 0px;
-}
-
-.tag:hover{
-  margin: 2px;
 }
 
 /* ------------------------------------ */

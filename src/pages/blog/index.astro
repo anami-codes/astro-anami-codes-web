@@ -4,12 +4,13 @@ const banner = "banner";
 
 import SimpleLayout from '../../layouts/SimpleLayout.astro';
 import DevlogShowcase from '../../components/blog_postShowcase.astro';
+import TagList from '../../components/format/tagList.astro';
 
 import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-const tags = [...new Set(posts.map((post: any) => post.data.tags).flat())];
+const tags = [...new Set(posts.filter((post : any) => post.data.published.includes("published")).map((post: any) => post.data.tags).flat())];
 ---
 
 <SimpleLayout title={title} banner={banner} navCode={title} url="blog">
@@ -23,9 +24,7 @@ const tags = [...new Set(posts.map((post: any) => post.data.tags).flat())];
       <div style="grid-column: span 1;">
         <h2 class="center">Tag List</h2>
           <div class="tags purple">
-            {tags.map((tag) => (
-              <a href={`/tags/${tag}`} class="btn tag">🌙{tag}🌙</a>
-            ))}
+            <TagList tags={tags} color="purple" />
           </div>
       </div>
     </div>

@@ -109,9 +109,11 @@
 
 .pretty-box a{
   color: var(--at-text-color);
+  transition: color .1s ease-out, background-color .1s ease-out, outline .1s ease-out;;
 }
 .pretty-box a:hover{
   color: var(--link-hover-hex);
+  transition: color .1s ease-in, background-color .1s ease-in, outline .1s ease-in;;
 }
 .pretty-box h1{
   text-align: center;
@@ -135,22 +137,65 @@
 /*  Post It */
 .post-it{
   max-width: 300px;
-  margin: 10px;
+  margin: 20px 25px;
   padding: 10px;
   background-color: rgb(var(--at-bg-color));
-  border: 2px solid rgb(var(--at-bg-border));
-  box-shadow: 10px 10px var(--at-text-color);
+  border: 2px solid rgb(var(--at-bg-color));
   background-image: url('/images/general/backgrounds/PaperTexture.webp');
   background-repeat: repeat;
   color: var(--custom-dark-color);
+  position: relative;
+
+  transition: border .1s ease-out;
 }
+.post-it::before {
+  content: '';
+  background-color: var(--at-text-color);
+  height: 100%;
+  width: 100%;
+  bottom: -7px;
+  left: 7px;
+  z-index: -1;
+  position: absolute;
+  transition: bottom .1s ease-out, left .1s ease-out, rotate .1s ease-out;
+}
+.post-it::after {
+  content: '';
+  background-color: var(--body-color-hex);
+  height: 100%;
+  width: 100%;
+  bottom: -12px;
+  left: 12px;
+  z-index: -2;
+  position: absolute;
+  transition: bottom .1s ease-out, left .1s ease-out, rotate .1s ease-out;
+}
+
 .post-it a {
   color: var(--custom-dark-color);
 }
+
 .post-it:hover {
   color: var(--custom-dark-color);
-  box-shadow: 0px 0px 8px 10px var(--at-text-color);
+  border: 2px solid var(--at-bg-border);
+
+  transition: border .1s ease-in;
 }
+.post-it:hover::before {
+  bottom: -4px;
+  left: -7px;
+  rotate: -5deg;
+
+  transition: bottom .1s ease-in, left .1s ease-in, rotate .1s ease-in;
+}
+.post-it:hover::after {
+  bottom: -4px;
+  left: 7px;
+  rotate: 3deg;
+
+  transition: bottom .1s ease-in, left .1s ease-in, rotate .1s ease-in;
+}
+
 
 /*  Cristal Bottle  */
 .glass-bottle-outside {
@@ -368,27 +413,32 @@ footer {
 /* ------------------------------------ */
 /* Base Button */
 .btn {
+  outline: none;
   background-color: var(--at-btn-color);
   border-radius: 15px;
   color: var(--body-color-hex)!important;
   text-align: center;
   margin: 2px;
   border-width: 0px;
+  transition: background-color .1s ease-out, outline .1s ease-out;
 }
 
 .btn:hover {
   outline: 2px solid var(--button-border-hover-hex);
   background-color: var(--button-hover-fill-hex);
   color: var(--body-color-hex) !important;
+  transition: background-color .1s ease-in, outline .1s ease-in;
 }
 
 .btn img {
   width: 95%;
   margin: 2.5%;
   opacity: 0.65;
+  transition: opacity .1s ease-out;
 }
 .btn img:hover{
   opacity: 1.0;
+  transition: opacity .1s ease-in;
 }
 
 /* Button Shapes */

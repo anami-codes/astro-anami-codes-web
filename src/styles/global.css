@@ -184,38 +184,6 @@ body ::before, ::after {
     box-sizing: border-box;
 }
 
-/* Body background Animation */
-@-webkit-keyframes body-bg-anim {
-  0% {background-image: var(--bg-img-1);}
-  50% {background-image: var(--bg-img-2);}
-}
-@-moz-keyframes body-bg-anim {
-  0% {background-image: var(--bg-img-1);}
-  50% {background-image: var(--bg-img-2);}
-}
-@-o-keyframes body-bg-anim {
-  0% {background-image: var(--bg-img-1);}
-  50% {background-image: var(--bg-img-2);}
-}
-@keyframes body-bg-anim{
-  0% {background-image: var(--bg-img-1);}
-  50% {background-image: var(--bg-img-2);}
-}
-
-html.animated {
-  .moche-bg {
-    animation: body-bg-anim 1s infinite;
-    -webkit-animation: body-bg-anim 1s infinite;
-    -moz-animation: body-bg-anim 1s infinite;
-    -o-animation: body-bg-anim 1s infinite;
-
-    -webkit-animation-timing-function: linear;
-    -moz-animation-timing-function: linear;
-    -o-animation-timing-function: linear;
-    animation-timing-function: linear;
-  }
-}
-
 .body-background {
     background: rgba(var(--body-color-rgb), 0.15);
 }

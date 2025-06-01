@@ -1,7 +1,7 @@
 :root {
     
     /* Useful Variables */
-    --custom-bg-color: 104, 197, 255;
+    --at-bg-color: 104, 197, 255;
     --heading-font-family: "Nunito", sans-serif;
     --heading-font-weight: 1000;
     --body-font-family: "Sono", monospace;
@@ -12,7 +12,8 @@
     --fixed-width-max: 90vw;
     --fixed-width-min: 75vw;
 
-    --bg-img: url('/images/general/backgrounds/Moche_Transparent.webp');
+    --bg-img-1: url('/images/general/backgrounds/moche_1.webp');
+    --bg-img-2: url('/images/general/backgrounds/moche_2.webp');
     --navbar-bg-img-1:url('/images/general/backgrounds/FresnoMar_Frame1.webp');
     --navbar-bg-img-2:url('/images/general/backgrounds/FresnoMar_Frame2.webp');
     --navbar-bg-img-3:url('/images/general/backgrounds/FresnoMar_Frame3.webp');
@@ -33,33 +34,40 @@ html {
     --link-hover-hex: #f5c762;
 
     /* Pink */
-    --border-pink: 152, 17, 120;
-    --fill-pink: 255, 116, 213;
+    --border-pink: rgb(152, 17, 120);
+    --fill-pink: 109, 53, 92;
+    --btn-pink: rgb(142, 71, 142);
     --light-pink: rgb(228, 196, 220);
     --dark-pink: rgb(49, 11, 40);
     
     /* Purple */
-    --border-purple: 58, 17, 152;
-    --fill-purple: 137, 116, 255;
+    --border-purple: rgb(58, 17, 152);
+    --fill-purple: 62, 53, 109;
+    --btn-purple: rgb(91, 71, 142);
     --light-purple: rgb(216, 206, 241);
     --dark-purple: rgb(18, 8, 43);
 
     /* Blue */
-    --border-blue: 37, 116, 165;
-    --fill-blue: 104, 197, 255;
+    --border-blue: rgb(37, 116, 165);
+    --fill-blue: 49, 86, 109;
+    --btn-blue: rgb(71, 120, 142);
+    --light-blue: rgb(180, 209, 227);
+    --dark-blue: rgb(25, 41, 52);
 
     /* Green */
-    --border-green: 31, 143, 100;
+    --border-green: rgb(31, 143, 100);
     --fill-green: 132, 216, 184;
+    --btn-green: rgb(71, 142, 72);
     --light-green: rgb(180, 227, 209);
     --dark-green: rgb(25, 52, 42);
 
     /* Useful Variables */
-    --box-opacity: 0.4;
+    --box-opacity: 0.8;
     --bg-color-hex: #0c0c0c;
     --bg-color-rgb: 12, 12, 12;
     --section-border-color: #2574a5;
     --section-bg-color: rgb(104, 197, 255, 0.4);
+    --section-btn-color: rgb(71, 163, 221);
     --navbar-bg-color: #345970;
     --body-color-hex: #f9f9f9;
     --body-color-rgb: 249, 249, 249;    
@@ -103,7 +111,7 @@ html.light {
   --fill-green-values: 132, 216, 184;
 
   /* Useful Variables */
-  --custom-border-color: #fff;
+  --at-bg-border: #fff;
   --box-opacity: 0.75;
   --bg-color-hex: #e3edf0;
   --bg-color-rgb: 227, 237, 240;
@@ -165,8 +173,8 @@ body {
     font-optical-sizing: auto;
     font-variation-settings: "MONO" 1;
 
-    background-image: var(--bg-img);
     background-color: var(--bg-color-hex);
+    background-image: var(--bg-img-1);
     color: var(--body-color-hex);
     margin: 0;
 
@@ -175,6 +183,39 @@ body {
 body ::before, ::after {
     box-sizing: border-box;
 }
+
+/* Body background Animation */
+@-webkit-keyframes body-bg-anim {
+  0% {background-image: var(--bg-img-1);}
+  50% {background-image: var(--bg-img-2);}
+}
+@-moz-keyframes body-bg-anim {
+  0% {background-image: var(--bg-img-1);}
+  50% {background-image: var(--bg-img-2);}
+}
+@-o-keyframes body-bg-anim {
+  0% {background-image: var(--bg-img-1);}
+  50% {background-image: var(--bg-img-2);}
+}
+@keyframes body-bg-anim{
+  0% {background-image: var(--bg-img-1);}
+  50% {background-image: var(--bg-img-2);}
+}
+
+html.animated {
+  .moche-bg {
+    animation: body-bg-anim 1s infinite;
+    -webkit-animation: body-bg-anim 1s infinite;
+    -moz-animation: body-bg-anim 1s infinite;
+    -o-animation: body-bg-anim 1s infinite;
+
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+}
+
 .body-background {
     background: rgba(var(--body-color-rgb), 0.15);
 }
@@ -246,30 +287,34 @@ ul li::marker {
 /*        Customization Block           */
 /* ------------------------------------ */
 .green {
-    --custom-border-color: var(--border-green);
-    --custom-bg-color: var(--fill-green);
-    --custom-light-color: var(--light-green);
+    --at-bg-border: var(--border-green);
+    --at-bg-color: var(--fill-green);
+    --at-btn-color: var(--btn-green);
+    --at-text-color: var(--light-green);
     --custom-dark-color: var(--dark-green);
 }
 .blue {
-    --custom-border-color: var(--border-blue);
-    --custom-bg-color: var(--fill-blue);
-    --custom-light-color: var(--light-blue);
+    --at-bg-border: var(--border-blue);
+    --at-bg-color: var(--fill-blue);
+    --at-btn-color: var(--btn-blue);
+    --at-text-color: var(--light-blue);
     --custom-dark-color: var(--dark-blue);
 }
 .purple {
-    --custom-border-color: var(--border-purple);
-    --custom-bg-color: var(--fill-purple);
-    --custom-light-color: var(--light-purple);
+    --at-bg-border: var(--border-purple);
+    --at-bg-color: var(--fill-purple);
+    --at-btn-color: var(--btn-purple);
+    --at-text-color: var(--light-purple);
     --custom-dark-color: var(--dark-purple);
 }
 .pink {
-    --custom-border-color: var(--border-pink);
-    --custom-bg-color: var(--fill-pink);
-    --custom-light-color: var(--light-pink);
+    --at-bg-border: var(--border-pink);
+    --at-bg-color: var(--fill-pink);
+    --at-btn-color: var(--btn-pink);
+    --at-text-color: var(--light-pink);
     --custom-dark-color: var(--dark-pink);
 }
 .black {
-    --custom-border-color: var(--black);
-    --custom-bg-color: var(--black-values);
+    --at-bg-border: var(--black);
+    --at-bg-color: var(--black-values);
 }

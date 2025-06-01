@@ -29,7 +29,7 @@ const projects = await getCollection('homepageProjects');
               <img src="/images/general/pfp.webp" alt="Host Anami" class="pfp">
               <p class="txt-s center">(Any pronouns!)</p>
             </div>
-            <h1>Hey there!</h1>
+            <h1 style="margin-top: 0.5em;">Hey there!</h1>
             <div>
               <div id="pfpSmall" class="pfp-box">
                 <img src="/images/general/pfp.webp" class="pfp">
@@ -71,7 +71,7 @@ const projects = await getCollection('homepageProjects');
     </div>
   </div>
   <div style="display: block; height: 2rem;"></div>
-  <div class="page-section-var blue" style="padding-left: 0px; padding-right: 0px;">
+  <div class="page-section-var" style="padding-left: 0px; padding-right: 0px;">
     <h1 class="center">Projects and Initiatives</h1>
     <div style="margin-bottom: 10px;">
         <div class="home-carousel center-flex" data-flickity='{ "watchCSS": true, "wrapAround": true, "prevNextButtons": false, "pageDots": false, "autoPlay": 1500 }'>
@@ -93,6 +93,6 @@ const projects = await getCollection('homepageProjects');
     <div class="devlog-margin">
       <DevlogShowcase startPost=0 maxPosts={maxPosts} posts={posts} />
     </div>
+    <div style="display: block; height: 2rem;"></div>
   </div>
-  <div style="display: block; height: 2rem;"></div>
 </SimpleLayout>

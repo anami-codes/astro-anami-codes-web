@@ -3,22 +3,22 @@ const {title, slug, date, description, tags} = Astro.props
 import FixedDate from './format/date.astro';
 import FixedTags from './format/tagList.astro';
 ---
-  
-<div class="glass-bottle-outside card-container green">
-        <div class="glass-bottle-inside">
-            <div class="card">
-                <div class="card-header">
-                    <h3><a href={slug}>{title}</a></h3>
-                    <div class="txt-s"><FixedDate date={date} /></div>
-                </div>
-                <div class="card-body">
-                    {description}
-                </div>
-                <div class="card-footer">
-                    <p class="txt-s" style="margin: auto -3px;">
-                        <FixedTags tags={tags} />
-                    </p>
-                </div>
+
+<a href={slug}>
+    <div class="post-it green">
+        <div class="card">
+            <div class="card-header">
+                <h3>{title}</h3>
+                <div class="txt-s"><FixedDate date={date} /></div>
+            </div>
+            <div class="card-body">
+                {description}
+            </div>
+            <div class="card-footer purple">
+                <p class="txt-s" style="margin: auto -3px;">
+                    <FixedTags tags={tags} />
+                </p>
+            </div>
         </div>
     </div>
-</div>
+</a>

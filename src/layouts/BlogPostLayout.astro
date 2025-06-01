@@ -7,10 +7,10 @@ import '../styles/blog.css'
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, subtitle, pubDate, banner, url, tags } = Astro.props;
+const { title, subtitle, pubDate, banner, slug, tags } = Astro.props;
 ---
 
-<PageLayout title={title} banner={banner != null ? banner : "banner"} navCode="Blog" url={url}>
+<PageLayout title={title} banner={banner != null ? banner : "banner"} navCode="Blog" url={slug}>
   <h1>{ title }</h1>
   <h2>{ subtitle }</h2>
   <p> 

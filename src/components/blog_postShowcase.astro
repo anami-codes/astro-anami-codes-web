@@ -10,7 +10,7 @@ const publishedPosts = posts.filter((post : any) => post.data.published.includes
         (post: any) => 
             <DevlogCard 
             title={post.data.title} 
-            slug={`/blog/${post.slug}/`} 
+            slug={`/blog/${post.data.slug}/`} 
             date={post.data.pubDate} 
             description={post.data.description}
             tags={post.data.tags} />

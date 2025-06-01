@@ -1,7 +1,7 @@
 ---
-const { tags } = Astro.props;
+const { tags, color } = Astro.props;
 const tagList = tags.map( (tag: any) => 
-		{return `<a href="/tags/${tag}" class="btn tag">🌙${tag}🌙</a>`}
+		{return `<a href="/tags/${tag}" class="btn tag ${color}">🌙${tag}🌙</a>`}
 	)
 
 ---

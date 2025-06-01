@@ -53,6 +53,10 @@
   .profile-arrows > .btn {
     width: max(95%, 170px);
   }
+  
+  .portfolio h1, .portfolio h2 {
+    font-size: 25px;
+  }
 }
 
 .arrow {
@@ -62,7 +66,6 @@
 }
 
 .arrow:hover {
-  margin: 3px;
   padding-top: 10px;
   padding-bottom: 10px;
 }

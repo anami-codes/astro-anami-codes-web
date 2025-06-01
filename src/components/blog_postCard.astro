@@ -4,21 +4,21 @@ import FixedDate from './format/date.astro';
 import FixedTags from './format/tagList.astro';
 ---
 
-<div class="pretty-box card-container green">
-    <div class="card">
-        <div class="card-header">
-            <div style="margin: 0px 15px 4px 15px;">
-                <h3><a href={slug}>{title}</a></h3>
+<a href={slug}>
+    <div class="post-it green">
+        <div class="card">
+            <div class="card-header">
+                <h3>{title}</h3>
                 <div class="txt-s"><FixedDate date={date} /></div>
             </div>
-        </div>
-        <div class="card-body hide-oveflow">
-            {description}
-        </div>
-        <div class="card-footer hide-oveflow">
-            <p class="txt-s" style="margin: auto 5px; color: var(--black)">
-                <FixedTags tags={tags} />
-            </p>
+            <div class="card-body">
+                {description}
+            </div>
+            <div class="card-footer">
+                <p class="txt-s" style="margin: auto -3px;">
+                    <FixedTags tags={tags} color="purple" />
+                </p>
+            </div>
         </div>
     </div>
-</div>
+</a>

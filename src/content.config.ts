@@ -31,6 +31,7 @@ const homepageProjects = defineCollection({
 		id: z.string(),
 		link: z.string(),
 		target: z.string(),
+		show: z.boolean(),
 	  }),
 });
 

@@ -100,26 +100,20 @@
 .pretty-box{
   min-width: 50px;
   min-height: 50px;
-
-  border: 2px solid rgb(var(--custom-border-color));
+  border: 2px solid var(--at-bg-border);
   border-radius: 15px;
   padding: min(5px, 2%) 0;
-
-  background-color: rgba(var(--custom-bg-color), var(--box-opacity));
+  background-color: rgba(var(--at-bg-color), var(--box-opacity));
   font-size: 20px;
-}
-.pretty-box .btn {
-  color: var(--body-color-hex);
-}
-.pretty-box .btn:hover {
-  color: var(--bg-color-hex) !important;
 }
 
 .pretty-box a{
-  color: var(--custom-light-color);
+  color: var(--at-text-color);
+  transition: color .1s ease-out, background-color .1s ease-out, outline .1s ease-out;;
 }
 .pretty-box a:hover{
   color: var(--link-hover-hex);
+  transition: color .1s ease-in, background-color .1s ease-in, outline .1s ease-in;;
 }
 .pretty-box h1{
   text-align: center;
@@ -140,13 +134,76 @@
   }
 }
 
+/*  Post It */
+.post-it{
+  max-width: 300px;
+  margin: 20px 25px;
+  padding: 10px;
+  background-color: rgb(var(--at-bg-color));
+  border: 2px solid rgb(var(--at-bg-color));
+  background-image: url('/images/general/backgrounds/PaperTexture.webp');
+  background-repeat: repeat;
+  color: var(--custom-dark-color);
+  position: relative;
+
+  transition: border .1s ease-out;
+}
+.post-it::before {
+  content: '';
+  background-color: var(--at-text-color);
+  height: 100%;
+  width: 100%;
+  bottom: -7px;
+  left: 7px;
+  z-index: -1;
+  position: absolute;
+  transition: bottom .1s ease-out, left .1s ease-out, rotate .1s ease-out;
+}
+.post-it::after {
+  content: '';
+  background-color: var(--body-color-hex);
+  height: 100%;
+  width: 100%;
+  bottom: -12px;
+  left: 12px;
+  z-index: -2;
+  position: absolute;
+  transition: bottom .1s ease-out, left .1s ease-out, rotate .1s ease-out;
+}
+
+.post-it a {
+  color: var(--custom-dark-color);
+}
+
+.post-it:hover {
+  color: var(--custom-dark-color);
+  border: 2px solid var(--at-bg-border);
+
+  transition: border .1s ease-in;
+}
+.post-it:hover::before {
+  bottom: -4px;
+  left: -7px;
+  rotate: -5deg;
+
+  transition: bottom .1s ease-in, left .1s ease-in, rotate .1s ease-in;
+}
+.post-it:hover::after {
+  bottom: -4px;
+  left: 7px;
+  rotate: 3deg;
+
+  transition: bottom .1s ease-in, left .1s ease-in, rotate .1s ease-in;
+}
+
+
 /*  Cristal Bottle  */
 .glass-bottle-outside {
   min-width: 50px;
   min-height: 50px;
 
-  border: 2px solid var(--custom-light-color);
-  background-color: rgba(var(--custom-border-color), 0.35);
+  border: 2px solid var(--at-text-color);
+  background-color: rgba(var(--at-bg-border), 0.35);
   border-radius: 15px;
   padding: 10px;
 }
@@ -155,13 +212,13 @@
   width: 100%;
   height: 100%;
 
-  border: 2px solid rgba(var(--custom-border-color), 0.5);
-  background-color: rgba(var(--custom-bg-color), 0.25);
+  border: 2px solid rgba(var(--at-bg-border), 0.5);
+  background-color: rgba(var(--at-bg-color), 0.25);
   border-radius: 10px;
 }
 
 .glass-bottle-inside a{
-  color: var(--custom-light-color);
+  color: var(--at-text-color);
 }
 .glass-bottle-inside a:hover{
   color: var(--link-hover-hex);
@@ -177,22 +234,18 @@
 .card {
   width: 100%;
   height: 100%;
-  position: relative;
   padding: min(10px, 2%) min(10px, 5%);
 }
 
 .card-header{
-  border-bottom: 1px solid var(--custom-border-color);
+  border-bottom: 1px solid var(--at-bg-border);
   height: 20%;
   width: 100%;
 }
 
 .card-body{
-  height: 180px;
   padding-bottom: min(5px);
-  display: block;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .card-footer{
@@ -262,63 +315,41 @@
 /* Nabvar Animation */
 @-webkit-keyframes navbar-bg-anim {
   0% {background-image: var(--navbar-bg-img-1);}
-  12% {background-image: var(--navbar-bg-img-3);}
-  24% {background-image: var(--navbar-bg-img-2);}
-  36% {background-image: var(--navbar-bg-img-3);}
-  48% {background-image: var(--navbar-bg-img-1);}
-  60% {background-image: var(--navbar-bg-img-3);}
-  72% {background-image: var(--navbar-bg-img-2);}
-  84% {background-image: var(--navbar-bg-img-3);}
-  /*100% {background-position-x: 60px;}*/
+  25% {background-image: var(--navbar-bg-img-3);}
+  50% {background-image: var(--navbar-bg-img-2);}
+  75% {background-image: var(--navbar-bg-img-3);}
 }
 @-moz-keyframes navbar-bg-anim {
   0% {background-image: var(--navbar-bg-img-1);}
-  12% {background-image: var(--navbar-bg-img-3);}
-  24% {background-image: var(--navbar-bg-img-2);}
-  36% {background-image: var(--navbar-bg-img-3);}
-  48% {background-image: var(--navbar-bg-img-1);}
-  60% {background-image: var(--navbar-bg-img-3);}
-  72% {background-image: var(--navbar-bg-img-2);}
-  84% {background-image: var(--navbar-bg-img-3);}
-  /*100% {background-position-x: 60px;}*/
+  25% {background-image: var(--navbar-bg-img-3);}
+  50% {background-image: var(--navbar-bg-img-2);}
+  75% {background-image: var(--navbar-bg-img-3);}
 }
 @-o-keyframes navbar-bg-anim {
   0% {background-image: var(--navbar-bg-img-1);}
-  12% {background-image: var(--navbar-bg-img-3);}
-  24% {background-image: var(--navbar-bg-img-2);}
-  36% {background-image: var(--navbar-bg-img-3);}
-  48% {background-image: var(--navbar-bg-img-1);}
-  60% {background-image: var(--navbar-bg-img-3);}
-  72% {background-image: var(--navbar-bg-img-2);}
-  84% {background-image: var(--navbar-bg-img-3);}
-  /*100% {background-position-x: 60px;}*/
+  25% {background-image: var(--navbar-bg-img-3);}
+  50% {background-image: var(--navbar-bg-img-2);}
+  75% {background-image: var(--navbar-bg-img-3);}
 }
 @keyframes navbar-bg-anim{
   0% {background-image: var(--navbar-bg-img-1);}
-  12% {background-image: var(--navbar-bg-img-3);}
-  24% {background-image: var(--navbar-bg-img-2);}
-  36% {background-image: var(--navbar-bg-img-3);}
-  48% {background-image: var(--navbar-bg-img-1);}
-  60% {background-image: var(--navbar-bg-img-3);}
-  72% {background-image: var(--navbar-bg-img-2);}
-  84% {background-image: var(--navbar-bg-img-3);}
-  /*100% {background-position-x: 60px;}*/
+  25% {background-image: var(--navbar-bg-img-3);}
+  50% {background-image: var(--navbar-bg-img-2);}
+  75% {background-image: var(--navbar-bg-img-3);}
 }
 
 html.animated {
-  .navbar
-  {
-    animation: navbar-bg-anim 3s infinite;
-    -webkit-animation: navbar-bg-anim 3s infinite;
-    -moz-animation: navbar-bg-anim 3s infinite;
-    -o-animation: navbar-bg-anim 3s infinite;
+  .navbar{
+    animation: navbar-bg-anim 1.5s infinite;
+    -webkit-animation: navbar-bg-anim 1.5s infinite;
+    -moz-animation: navbar-bg-anim 1.5s infinite;
+    -o-animation: navbar-bg-anim 1.5s infinite;
 
     -webkit-animation-timing-function: linear;
     -moz-animation-timing-function: linear;
     -o-animation-timing-function: linear;
     animation-timing-function: linear;
   }
-  
 }
 
 .navlinks {
@@ -355,10 +386,11 @@ html.animated {
 }
 
 .page-section-var {
-padding: 10px;
-border-top: 2px solid var(--section-border-color);
-border-bottom: 2px solid var(--section-border-color);
-background-color: var(--section-bg-color);
+  padding: 10px;
+  border-top: 2px solid var(--section-border-color);
+  border-bottom: 2px solid var(--section-border-color);
+  background-color: var(--section-bg-color);
+  --at-btn-color: var(--section-btn-color)
 }
 
 /* ------------------------------------ */
@@ -381,27 +413,32 @@ footer {
 /* ------------------------------------ */
 /* Base Button */
 .btn {
-  background-color: rgba(var(--custom-bg-color), 0.65);
+  outline: none;
+  background-color: var(--at-btn-color);
   border-radius: 15px;
-  color: var(--body-color-hex);
+  color: var(--body-color-hex)!important;
   text-align: center;
   margin: 2px;
   border-width: 0px;
+  transition: background-color .1s ease-out, outline .1s ease-out;
 }
 
 .btn:hover {
   outline: 2px solid var(--button-border-hover-hex);
   background-color: var(--button-hover-fill-hex);
   color: var(--body-color-hex) !important;
+  transition: background-color .1s ease-in, outline .1s ease-in;
 }
 
 .btn img {
   width: 95%;
   margin: 2.5%;
   opacity: 0.65;
+  transition: opacity .1s ease-out;
 }
 .btn img:hover{
   opacity: 1.0;
+  transition: opacity .1s ease-in;
 }
 
 /* Button Shapes */
@@ -419,6 +456,9 @@ footer {
 }
 .btn-img:hover{
   color: var(--link-hover-hex);
+}
+.use-bg-color{
+  background-color: var(--at-bg-border);
 }
 
 /* ---------- */

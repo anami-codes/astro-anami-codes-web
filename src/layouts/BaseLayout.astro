@@ -9,6 +9,7 @@ import Navigation from '../components/_navigation.astro';
 
 import '../styles/global.css';
 import '../styles/anami-frames.css'
+import '../styles/anami-animations.css'
 import '../styles/flickity-docs.css'
 
 const {title, banner, navCode, url} = Astro.props;
@@ -39,7 +40,7 @@ const {title, banner, navCode, url} = Astro.props;
     <ClientRouter />
     <script src="../scripts/flickity-docs.min.js"></script>
   </head>
-  <body>
+  <body class="moche-bg">
     <Header banner={banner} />
     <Navigation currentPage={navCode} />
       <slot />

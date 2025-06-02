@@ -1,10 +1,14 @@
 ---
-const { currentPage } = Astro.props;
+const { currentPage, lang } = Astro.props;
+
+const Home = (lang == "en") ? "Home" : "Inicio"
+const About = (lang == "en") ? "About me" : "Sobre mí"
+
 ---
 <div class="navbar">
     <div class="navlinks">
-        🌙 <a href="/" class={currentPage === "Home" ? "nav-current" : "nav-link"}> Home </a>
-        🌙 <a href="/about/" class={currentPage === "About" ? "nav-current" : "nav-link"}> About </a>
-        🌙 <a href="/blog/" class={currentPage === "Blog" ? "nav-current" : "nav-link"}> Blog </a>
+        🌙 <a href=`/${lang}/` class={currentPage === "Home" ? "nav-current" : "nav-link"}> {Home} </a>
+        🌙 <a href=`/${lang}/about/` class={currentPage === "About" ? "nav-current" : "nav-link"}> {About} </a>
+        🌙 <a href=`/${lang}/blog/` class={currentPage === "Blog" ? "nav-current" : "nav-link"}> Blog </a>
     </div>
 </div>

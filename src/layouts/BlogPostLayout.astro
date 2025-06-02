@@ -5,12 +5,12 @@ import FixedDate from '../components/format/date.astro';
 import FixedTags from '../components/format/tagList.astro';
 import '../styles/blog.css'
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blogEn'>['data'];
 
 const { title, subtitle, pubDate, banner, slug, tags } = Astro.props;
 ---
 
-<PageLayout title={title} banner={banner != null ? banner : "banner"} navCode="Blog" url={slug}>
+<PageLayout title={title} banner={banner != null ? banner : "banner"} navCode="Blog" url={slug} lang="en">
   <h1>{ title }</h1>
   <h2>{ subtitle }</h2>
   <p> 

@@ -15,7 +15,20 @@
       "path": "[[workspace]]/src/content/blog",
       "contentTypes": [
         "blog"
-      ]
+      ],
+      "defaultLocale": "en" // This value needs to map to the locale defined in the i18n setting
+    }
+  ],
+  "frontMatter.content.i18n": [
+    {
+      "title": "English",
+      "locale": "en",
+      "path": "en"
+    },
+    {
+      "title": "Español",
+      "locale": "es",
+      "path": "es"
     }
   ],
   "frontMatter.content.supportedFileTypes": [

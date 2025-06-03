@@ -1,9 +1,7 @@
 import { glob, file } from 'astro/loaders';
 import { defineCollection, reference, z } from 'astro:content';
 
-const blog = defineCollection({
-	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
-	schema: z.object({
+const blogSchema = z.object({
 		title: z.string(),
 		subtitle: z.string().optional(),
 		description: z.string().optional(),
@@ -13,10 +11,17 @@ const blog = defineCollection({
 		slug: z.string().optional(),
 		tags: z.string().array().optional(),
 		categories: z.string().array().optional(),
-	}),
-});
+	})
 
-const homepageGames = defineCollection({
+function getBlog(lang:string)
+{
+	return  defineCollection({
+		loader: glob({ base: `./src/content/blog/${lang}/`, pattern: '**/*.{md,mdx}' }),
+		schema: blogSchema,
+	});
+}
+
+const homepageGamesCollection = defineCollection({
 	loader: file("src/content/data/homepage.json", { parser: (text) => JSON.parse(text).games }),
 	schema: z.object({
 		id: z.string(),
@@ -25,7 +30,7 @@ const homepageGames = defineCollection({
 	  }),
 });
 
-const homepageProjects = defineCollection({
+const homepageProjectsCollection = defineCollection({
 	loader: file("src/content/data/homepage.json", { parser: (text) => JSON.parse(text).projects }),
 	schema: z.object({
 		id: z.string(),
@@ -35,4 +40,9 @@ const homepageProjects = defineCollection({
 	  }),
 });
 
-export const collections = { blog, homepageGames, homepageProjects };
+export const collections = {
+	'blogEn': getBlog("en"),
+	'blogEs': getBlog("es"),
+	'homepageGames': homepageGamesCollection, 
+	'homepageProjects': homepageProjectsCollection
+};

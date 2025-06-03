@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import DevlogShowcase from '../../../components/blog_postShowcase.astro'
+import { getLangFromUrl } from '../../../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+
+import { getCollection } from 'astro:content';
+export async function getStaticPaths() {
+    const posts = (await getCollection('blogEs', ({ data }) => {
+        return data.published === "published";
+    })).sort(
+        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+    );
+
+    const uniqueTags = [...new Set(posts.map((post: any) => post.data.tags).flat())];
+    return uniqueTags.map((tag) => {
+    const filteredPosts = posts.filter((post: any) => post.data.tags.includes(tag));
+    return {
+        params: { tag },
+        props: { posts: filteredPosts },
+    };
+    });
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+<BaseLayout title={tag} banner="banner" navCode="Blog">
+    <div class="mh-auto" style="max-width: 90vw; min-width: 75vw; width: 50%;">
+        <h1>Posts etiquetados como: {tag}</h1>
+    </div>
+    <DevlogShowcase startPost=0 maxPosts=10 posts={posts}/>
+    <div style="display: block; height: 2rem;"></div>
+</BaseLayout>

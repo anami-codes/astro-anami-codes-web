@@ -1,7 +1,7 @@
 ---
+import { Icon } from 'astro-icon/components'
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 import LanguagePicker from '../components/btn_language.astro';
-
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -9,10 +9,13 @@ const { currentPage } = Astro.props;
 
 ---
 <div class="navbar">
+    <button id="myBtn" class="navlinks-dropdown btn blue">{t('nav.menu')} > </button>
     <div class="navlinks">
-        🌙 <a href=`/${lang}/` class={currentPage === "Home" ? "nav-current" : "nav-link"}> {t('nav.home')} </a>
-        🌙 <a href=`/${lang}/about/` class={currentPage === "About" ? "nav-current" : "nav-link"}> {t('nav.about')} </a>
-        🌙 <a href=`/${lang}/blog/` class={currentPage === "Blog" ? "nav-current" : "nav-link"}> {t('nav.blog')} </a>
-        🌙 <LanguagePicker lang={lang} />
+        <div id="myDropdown" class="navlinks-content">
+            <div class={currentPage === "Home" ? "nav-current" : "nav-link"}>🌙 <a href=`/${lang}/` > {t('nav.home')} </a></div>
+            <div class={currentPage === "About" ? "nav-current" : "nav-link"}>🌙 <a href=`/${lang}/about/`> {t('nav.about')} </a></div>
+            <div class={currentPage === "Blog" ? "nav-current" : "nav-link"}>🌙 <a href=`/${lang}/blog/` > {t('nav.blog')} </a></div>
+            <div class="nav-link">🌙 <LanguagePicker lang={lang} /></div>
+        </div>
     </div>
 </div>

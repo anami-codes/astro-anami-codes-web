@@ -1,0 +1,36 @@
+---
+const title = "Blog";
+const banner = "banner";
+
+import SimpleLayout from '../../../layouts/SimpleLayout.astro';
+import DevlogShowcase from '../../../components/blog_postShowcase.astro';
+import TagList from '../../../components/format/tagList.astro';
+
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blogEs', ({ data }) => {
+        return data.published === "published";
+    })).sort(
+        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+    );
+
+const tags = [...new Set(posts.filter((post : any) => post.data.published.includes("published")).map((post: any) => post.data.tags).flat())];
+---
+
+<SimpleLayout title={title} banner={banner} navCode={title} url="blog">
+  <div style="display: block; height: 1rem;"></div>
+  <div class="fixed-width mh-auto" style="--fixed-width-min:80vw; --fixed-width-min:95vw;">
+    <div class="grid-container grid-min-size" style="--grid-column-min-size: 460px">
+      <div style="grid-column: span 2;">
+        <h2 class="center">Posts</h2>
+        <DevlogShowcase startPost=0 maxPosts=10 posts={posts}/>
+      </div>
+      <div style="grid-column: span 1;">
+        <h2 class="center">Lista de Tags</h2>
+          <div class="tags purple">
+            <TagList tags={tags} color="purple" />
+          </div>
+      </div>
+    </div>
+  </div>
+  <div style="display: block; height: 1rem;"></div>
+</SimpleLayout>

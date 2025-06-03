@@ -1,5 +1,5 @@
 ---
-const {title, slug, date, description, tags} = Astro.props
+const {title, slug, date, description, tags, lang} = Astro.props
 import FixedDate from './format/date.astro';
 import FixedTags from './format/tagList.astro';
 ---
@@ -9,7 +9,7 @@ import FixedTags from './format/tagList.astro';
         <div class="card">
             <div class="card-header">
                 <h3>{title}</h3>
-                <div class="txt-s"><FixedDate date={date} /></div>
+                <div class="txt-s"><FixedDate date={date} lang={lang}/></div>
             </div>
             <div class="card-body">
                 {description}

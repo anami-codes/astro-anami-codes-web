@@ -5,9 +5,9 @@
     --heading-font-family: "Nunito", sans-serif;
     --heading-font-weight: 1000;
     --body-font-family: "Sono", monospace;
-    --body-font-size: 1rem;
+    --body-font-size: 1.2rem;
     --body-font-weight: 400;
-    --body-line-height: 1.5;
+    --body-line-height: 1.4;
 
     --fixed-width-max: 90vw;
     --fixed-width-min: 75vw;
@@ -227,7 +227,7 @@ h2 {
 }
 
 .txt-s{
-    font-size: 12px !important;
+    font-size: 1rem !important;
 }
 
 /* ------------------------------------ */

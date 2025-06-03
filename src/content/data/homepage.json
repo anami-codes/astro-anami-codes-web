@@ -33,7 +33,7 @@
 "projects":[
     {
         "id" : "anami-toolkit",
-        "link" : "/", 
+        "link" : "/en/", 
         "target" : "_self",
         "show": true
     },

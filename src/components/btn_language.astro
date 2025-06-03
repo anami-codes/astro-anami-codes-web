@@ -1,0 +1,13 @@
+---
+import { languages } from '../i18n/ui';
+import { gatTranslatedPath } from '../i18n/utils';
+
+const { lang } = Astro.props;
+const newPath = gatTranslatedPath(Astro.url, lang);
+var langBtn;
+if(lang == "en")
+    langBtn = `<a href="${newPath}" class="nav-link">${languages['es']}</a>`
+else
+    langBtn = `<a href="${newPath}" class="nav-link">${languages['en']}</a>`
+---
+<Fragment set:html={langBtn}` />

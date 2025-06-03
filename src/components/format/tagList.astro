@@ -1,7 +1,11 @@
 ---
+import { getLangFromUrl } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
 const { tags, color } = Astro.props;
 const tagList = tags.map( (tag: any) => 
-		{return `<a href="/tags/${tag}" class="btn tag ${color}">🌙${tag}🌙</a>`}
+		{return `<a href="/${lang}/tags/${tag}" class="btn tag ${color}">🌙${tag}🌙</a>`}
 	)
 
 ---

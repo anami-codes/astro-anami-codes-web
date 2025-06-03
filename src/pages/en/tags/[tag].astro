@@ -1,16 +1,18 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import DevlogShowcase from '../../components/blog_postShowcase.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import DevlogShowcase from '../../../components/blog_postShowcase.astro'
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-    const allPosts = (await getCollection('blog')).sort(
+    const posts = (await getCollection('blogEn', ({ data }) => {
+        return data.published === "published";
+    })).sort(
         (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
     );
 
-    const uniqueTags = [...new Set(allPosts.map((post: any) => post.data.tags).flat())];
+    const uniqueTags = [...new Set(posts.map((post: any) => post.data.tags).flat())];
     return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post: any) => post.data.tags.includes(tag));
+    const filteredPosts = posts.filter((post: any) => post.data.tags.includes(tag));
     return {
         params: { tag },
         props: { posts: filteredPosts },
@@ -25,6 +27,6 @@ const { posts } = Astro.props;
     <div class="mh-auto" style="max-width: 90vw; min-width: 75vw; width: 50%;">
         <h1>Posts tagged as: {tag}</h1>
     </div>
-    <DevlogShowcase startPost=0 maxPosts=10 posts={posts} />
+    <DevlogShowcase startPost=0 maxPosts=10 posts={posts}/>
     <div style="display: block; height: 2rem;"></div>
 </BaseLayout>

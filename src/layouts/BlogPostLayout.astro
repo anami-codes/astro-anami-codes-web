@@ -1,20 +1,20 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { getLangFromUrl } from '../i18n/utils';
 import PageLayout from './PageLayout.astro';
 import FixedDate from '../components/format/date.astro';
 import FixedTags from '../components/format/tagList.astro';
 import '../styles/blog.css'
 
-type Props = CollectionEntry<'blogEn'>['data'];
-
+const lang = getLangFromUrl(Astro.url);
 const { title, subtitle, pubDate, banner, slug, tags } = Astro.props;
 ---
 
-<PageLayout title={title} banner={banner != null ? banner : "banner"} navCode="Blog" url={slug} lang="en">
+<PageLayout title={title} banner={banner != null ? banner : "banner"} navCode="Blog" url={slug}>
   <h1>{ title }</h1>
   <h2>{ subtitle }</h2>
   <p> 
-    <FixedDate date={pubDate} /> || Tags: <FixedTags tags={tags} color="blue"/>
+    <FixedDate date={pubDate} lang={lang} /> || Tags: <FixedTags tags={tags} color="blue"/>
   </p>
   <hr>
   <div class="content blog">   

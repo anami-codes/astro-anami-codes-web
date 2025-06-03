@@ -21,7 +21,7 @@ const games = await getCollection('homepageGames');
 const projects = await getCollection('homepageProjects');
 ---
 
-<SimpleLayout title={pageTitle} banner={banner} navCode={pageTitle} url="" lang="es">
+<SimpleLayout title={pageTitle} banner={banner} navCode={pageTitle} url="">
   <div class="page-section center-evenly-flex">
     <div class="profile w-3">
       <div class="box-margin">
@@ -77,10 +77,10 @@ const projects = await getCollection('homepageProjects');
   <div class="page-section-var" style="padding-left: 0px; padding-right: 0px;">
     <h1 class="center">Proyectos e Iniciativas</h1>
     <div style="margin-bottom: 10px;">
-        <div class="home-carousel center-flex" data-flickity='{ "watchCSS": true, "wrapAround": true, "prevNextButtons": false, "pageDots": false, "autoPlay": 1500 }'>
+        <div class="carousel center-flex" data-flickity='{ "watchCSS": true, "wrapAround": true, "prevNextButtons": false, "pageDots": false, "autoPlay": 1500 }'>
           <For of={projects}>{project => 
-            <div class="home-carousel-cell">
-              <div class={project.data.show ? "btn round item" : "btn round item disabled"} style="height: 250px; width: 250px;">
+            <div class="carousel-cell">
+              <div class={project.data.show ? "btn round item" : "btn round item disabled"}>
                 <a href={project.data.link} target={project.data.target}>
                     <img src={project.data.show ? `/images/projects/${project.data.id}/logo.webp` : "/images/projects/default.webp"} alt={project.data.show ? `${project.data.id}` : "TBD"} >
                 </a>

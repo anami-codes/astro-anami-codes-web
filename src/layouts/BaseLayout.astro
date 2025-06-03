@@ -2,6 +2,7 @@
 import { ClientRouter } from "astro:transitions";
 import { SEO } from "astro-seo";
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_URL } from '../consts';
+import { getLangFromUrl } from '../i18n/utils';
 
 import Header from '../components/_header.astro';
 import Footer from '../components/_footer.astro';
@@ -10,9 +11,9 @@ import Navigation from '../components/_navigation.astro';
 import '../styles/global.css';
 import '../styles/anami-frames.css'
 import '../styles/anami-animations.css'
-import '../styles/flickity-docs.css'
 
-const {title, banner, navCode, url, lang} = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const {title, banner, navCode, url} = Astro.props;
 
 ---
 <html class="animated" lang=`${lang}`>
@@ -38,11 +39,10 @@ const {title, banner, navCode, url, lang} = Astro.props;
       }}
     />
     <ClientRouter />
-    <script src="../scripts/flickity-docs.min.js"></script>
   </head>
   <body class="moche-bg">
     <Header banner={banner} />
-    <Navigation currentPage={navCode} lang={lang} />
+    <Navigation currentPage={navCode} />
       <slot />
     <Footer />     
   </body>

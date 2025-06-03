@@ -1,14 +1,18 @@
 ---
-const { currentPage, lang } = Astro.props;
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import LanguagePicker from '../components/btn_language.astro';
 
-const Home = (lang == "en") ? "Home" : "Inicio"
-const About = (lang == "en") ? "About me" : "Sobre mí"
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { currentPage } = Astro.props;
 
 ---
 <div class="navbar">
     <div class="navlinks">
-        🌙 <a href=`/${lang}/` class={currentPage === "Home" ? "nav-current" : "nav-link"}> {Home} </a>
-        🌙 <a href=`/${lang}/about/` class={currentPage === "About" ? "nav-current" : "nav-link"}> {About} </a>
-        🌙 <a href=`/${lang}/blog/` class={currentPage === "Blog" ? "nav-current" : "nav-link"}> Blog </a>
+        🌙 <a href=`/${lang}/` class={currentPage === "Home" ? "nav-current" : "nav-link"}> {t('nav.home')} </a>
+        🌙 <a href=`/${lang}/about/` class={currentPage === "About" ? "nav-current" : "nav-link"}> {t('nav.about')} </a>
+        🌙 <a href=`/${lang}/blog/` class={currentPage === "Blog" ? "nav-current" : "nav-link"}> {t('nav.blog')} </a>
+        🌙 <LanguagePicker lang={lang} />
     </div>
 </div>

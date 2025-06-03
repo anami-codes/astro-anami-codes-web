@@ -1,7 +1,10 @@
 ---
-const {startPost, maxPosts, posts, lang} = Astro.props;
+const {startPost, maxPosts, posts} = Astro.props;
 
 import DevlogCard from "./blog_postCard.astro";
+
+import { getLangFromUrl } from '../i18n/utils';
+const lang = getLangFromUrl(Astro.url);
 
 ---
 <div class="center-flex">
@@ -12,7 +15,8 @@ import DevlogCard from "./blog_postCard.astro";
             slug={`/${lang}/blog/${post.data.slug}/`} 
             date={post.data.pubDate} 
             description={post.data.description}
-            tags={post.data.tags} />
+            tags={post.data.tags}
+            lang={lang} />
         )
     }
 </div>

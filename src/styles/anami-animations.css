@@ -12,7 +12,17 @@ html.animated {
     animation-timing-function: linear;
     }
 
-    
+  .tag:hover {
+    animation: tag-hover-anim 1.75s infinite;
+    -webkit-animation: tag-hover-anim 1.75s infinite;
+    -moz-animation: tag-hover-anim 1.75s infinite;
+    -o-animation: tag-hover-anim 1.75s infinite;
+
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
 }
 
 /* Body background Animation */
@@ -31,4 +41,38 @@ html.animated {
 @keyframes body-bg-anim{
   0% {background-image: var(--bg-img-1);}
   50% {background-image: var(--bg-img-2);}
+}
+
+/* Tag Animation */
+@-webkit-keyframes tag-hover-anim {
+  0% {rotate: 0deg;}
+  10% {rotate: -5deg;}
+  20% {rotate: 5deg;}
+  30% {rotate: -5deg;}
+  40% {rotate: 5deg;}
+  50% {rotate: 0deg;}
+}
+@-moz-keyframes tag-hover-anim {
+  0% {rotate: 0deg;}
+  10% {rotate: -5deg;}
+  20% {rotate: 5deg;}
+  30% {rotate: -5deg;}
+  40% {rotate: 5deg;}
+  50% {rotate: 0deg;}
+}
+@-o-keyframes tag-hover-anim {
+  0% {rotate: 0deg;}
+  10% {rotate: -5deg;}
+  20% {rotate: 5deg;}
+  30% {rotate: -5deg;}
+  40% {rotate: 5deg;}
+  50% {rotate: 0deg;}
+}
+@keyframes tag-hover-anim {
+  0% {rotate: 0deg;}
+  10% {rotate: -5deg;}
+  20% {rotate: 5deg;}
+  30% {rotate: -5deg;}
+  40% {rotate: 5deg;}
+  50% {rotate: 0deg;}
 }

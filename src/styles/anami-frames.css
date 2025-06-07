@@ -506,6 +506,11 @@ footer {
   margin: 4px;
   padding: 2px 5px;
   border-width: 0px;
+  rotate: 0deg;
+}
+
+.tag:hover {
+  rotate: 0deg;
 }
 
 /* ------------------------------------ */

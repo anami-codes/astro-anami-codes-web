@@ -260,8 +260,32 @@
 /* ------------------------------------ */
 .banner {
   height: 100%;
-  background-image: url('/images/banners/bg_banner.webp');
+  background-color: black;
   text-align: center;
+}
+
+.banner-front-color {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.banner-front-img {
+  height: 100%;
+  width: 100%;
+  background-image: url('/images/banners/NB_Stars_Background_2.png');
+}
+
+.banner-back-color {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.banner-back-img {
+  height: 100%;
+  width: 100%;
+  background-image: url('/images/banners/NB_Stars_Background_1.png');
 }
 
 .banner img {

@@ -23,6 +23,29 @@ html.animated {
     -o-animation-timing-function: linear;
     animation-timing-function: linear;
   }
+
+  .banner-front-color {
+    animation: banner-front-anim 4s infinite;
+    -webkit-animation: banner-front-anim 4s infinite;
+    -moz-animation: banner-front-anim 4s infinite;
+    -o-animation: banner-front-anim 4s infinite;
+
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+  .banner-back-color {
+    animation: banner-back-anim 10s infinite;
+    -webkit-animation: banner-back-anim 10s infinite;
+    -moz-animation: banner-back-anim 10s infinite;
+    -o-animation: banner-back-anim 10s infinite;
+
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
 }
 
 /* Body background Animation */
@@ -75,4 +98,56 @@ html.animated {
   30% {rotate: -5deg;}
   40% {rotate: 5deg;}
   50% {rotate: 0deg;}
+}
+
+@-webkit-keyframes banner-back-anim {
+  0% {background-color: rgba(0, 0, 0, 0.6);}
+  20% {background-color: rgba(0, 0, 0, 0.1);}
+  40% {background-color: rgba(0, 0, 0, 0.6);}
+  70% {background-color: rgba(0, 0, 0, 0.1);}
+  
+}
+@-moz-keyframes banner-back-anim {
+  0% {background-color: rgba(0, 0, 0, 0.6);}
+  20% {background-color: rgba(0, 0, 0, 0.1);}
+  40% {background-color: rgba(0, 0, 0, 0.6);}
+  70% {background-color: rgba(0, 0, 0, 0.1);}
+}
+@-o-keyframes banner-back-anim {
+  0% {background-color: rgba(0, 0, 0, 0.6);}
+  20% {background-color: rgba(0, 0, 0, 0.1);}
+  40% {background-color: rgba(0, 0, 0, 0.6);}
+  70% {background-color: rgba(0, 0, 0, 0.1);}
+}
+@keyframes banner-back-anim {
+  0% {background-color: rgba(0, 0, 0, 0.6);}
+  20% {background-color: rgba(0, 0, 0, 0.1);}
+  40% {background-color: rgba(0, 0, 0, 0.6);}
+  70% {background-color: rgba(0, 0, 0, 0.1);}
+}
+
+@-webkit-keyframes banner-front-anim {
+  0% {background-color: rgba(0, 0, 0, 0.3);}
+  20% {background-color: rgba(0, 0, 0, 0.15);}
+  40% {background-color: rgba(0, 0, 0, 0.3);}
+  70% {background-color: rgba(0, 0, 0, 0.15);}
+  
+}
+@-moz-keyframes banner-front-anim {
+  0% {background-color: rgba(0, 0, 0, 0.3);}
+  20% {background-color: rgba(0, 0, 0, 0.15);}
+  40% {background-color: rgba(0, 0, 0, 0.3);}
+  70% {background-color: rgba(0, 0, 0, 0.15);}
+}
+@-o-keyframes banner-front-anim {
+  0% {background-color: rgba(0, 0, 0, 0.3);}
+  20% {background-color: rgba(0, 0, 0, 0.15);}
+  40% {background-color: rgba(0, 0, 0, 0.3);}
+  70% {background-color: rgba(0, 0, 0, 0.15);}
+}
+@keyframes banner-front-anim {
+  0% {background-color: rgba(0, 0, 0, 0.3);}
+  20% {background-color: rgba(0, 0, 0, 0.15);}
+  40% {background-color: rgba(0, 0, 0, 0.3);}
+  70% {background-color: rgba(0, 0, 0, 0.15);}
 }
